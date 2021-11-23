@@ -13,20 +13,19 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <>
-    {/* <Switch> */}
       <div className='header'>
-        <img src="" alt="" />
+        <div>
+        <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1637653233/IMG_5588_iksqs5.jpg"/>
+        </div>
+ 
         <ul>
           <Link className='login' to='/login'>Log In</Link>
           <Link className='signup' to='/signup'>Sign Up</Link>
         </ul>
     </div>
-      {/* <Link to='/logout'>Log Out</Link> */}
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-      {/* <ProtectedRoute path="/dashboard" component={UserProfileContainer} /> */}
-    {/* </Switch> */}
-    {/* <Route path='/logout' ></Route> */}
+      {/* <ProtectedRoute path='/dashboard' component={DashboardNavbar}/> */}
   </>
 
 );

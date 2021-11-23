@@ -17,6 +17,18 @@
 .header {
   display: flex;
   justify-content: space-between;
+
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.header_logo{
+  font-size: larger;
+  font-weight: 600;
 }
 .login {
   color: #1CC29F;
@@ -25,7 +37,7 @@
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  font-family: Montserrat;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .signup {
@@ -33,10 +45,12 @@
   color: white;
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  font-family: Montserrat;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .login_form_details {
@@ -46,6 +60,7 @@
   padding: 30px;
   margin: 0 auto;
   width: 40vw;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .login_form {
@@ -55,16 +70,50 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
   text-align: left;
-  width: 70%;
+  width: 60vw;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.login_form_details > input {
+  padding: 8px;
+}
+
+.login_form_details > label {
+  padding: 8px;
+}
+
+.login_form_details > button {
+  padding: 8px;
+  margin-top: 10px;
+  font-size: 20px;
 }
 
 .signup_form_details {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 30px;
+  padding: 30pxx;
+  margin: 0 auto;
+  width: 40vw;
+  font-family: 'Varela Round', sans-serif;
 
 }
+
+.signup_form_details > input {
+  padding: 8px;
+}
+
+.signup_form_details > label {
+  padding: 8px;
+}
+
+.signup_form_details > button {
+  padding: 8px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+
 
 .signup_form {
   display: inline-block;
@@ -75,5 +124,18 @@
   margin-left: auto;
   margin-right: auto;
   text-align: left;
+  width: 60vw;
+  font-family: 'Varela Round', sans-serif;
 }
 
+.signup_container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.login_container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
