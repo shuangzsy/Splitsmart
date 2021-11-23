@@ -9,7 +9,9 @@ const mapStateToProps = (state) => {
       username: '',
       password: ''
     },
-    formType: 'login'
+    formType: 'login',
+    errors: state.errors,
+    demoUser: {email: "sz3@sz.com", username: "sz3", phone_number: null, password: "1234567"}
   };
 };
 

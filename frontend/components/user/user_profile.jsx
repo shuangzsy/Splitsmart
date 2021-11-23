@@ -1,6 +1,7 @@
 import React from 'react';
 // import EventIndexItem from './event_index_item';
 import { Link } from 'react-router-dom';
+import {logout} from '../../actions/session_actions';
 
 /*
 Export an `EventIndex` presentational component that renders a list (`ul`) of
@@ -21,7 +22,10 @@ class UserProfile extends React.Component {
   render() {
  
     return (
-      <p>hello</p>
+      <div>
+        <p>hello</p>
+        <button onClick={() => this.props.UserLogout()}>Log Out</button>
+      </div>
     )
   }
 }
