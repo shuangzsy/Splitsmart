@@ -24,8 +24,8 @@ class UserProfile extends React.Component {
  
     return (
       <div>
-        <DashboardNav currentUser = {this.props.currentUser}/>
-        <button onClick={() => this.props.UserLogout()}>Log Out</button>
+        <DashboardNav currentUser={this.props.currentUser} UserLogout = {this.props.UserLogout}/>
+        <button onClick={() => <AddExpense/>}>Add Expenses</button>
       </div>
     )
   }

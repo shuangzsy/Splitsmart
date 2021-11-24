@@ -1,24 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const DashboardNav = () => {
+const DashboardNav = (props) => {
   return (
-    <header class="header">
-      <nav class="header-nav group">
+    <header className="header">
+      <nav className="header-nav group">
 
-        <h1 class="header-logo">
+        <h1 className="header-logo">
           <a href="#">Splitsmart</a>
         </h1>
 
-        <ul class="header-list group">
+        <ul className="header-list group">
           <li>
-            <a href="#">props.CurrentUser</a>
-            <ul class="header-notifications">
+            <a href="#">{props.CurrentUser}</a>
+            <ul className="header-notifications">
               <li><a href="#">Your account</a></li>
               <li><a href="#">Create a group</a></li>
               <li><a href="#">Fairness calculators</a></li>
               <li><a href="#">Contact support</a></li>
-              <li><a href="#">Log out</a></li>
+              <li> <button onClick={() => props.UserLogout()}>Log Out</button></li>
             </ul>
           </li>
         </ul>
