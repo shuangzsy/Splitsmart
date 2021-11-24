@@ -2,6 +2,7 @@ import React from 'react';
 // import EventIndexItem from './event_index_item';
 import { Link } from 'react-router-dom';
 import {logout} from '../../actions/session_actions';
+import DashboardNav from '../dashborad_nav';
 
 /*
 Export an `EventIndex` presentational component that renders a list (`ul`) of
@@ -23,7 +24,7 @@ class UserProfile extends React.Component {
  
     return (
       <div>
-        <p>hello</p>
+        <DashboardNav currentUser = {this.props.currentUser}/>
         <button onClick={() => this.props.UserLogout()}>Log Out</button>
       </div>
     )

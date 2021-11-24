@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const mainPage = () => {
+const MainNav = () => {
   return (
     <div>
     <div className='header'>
@@ -22,4 +22,4 @@ const mainPage = () => {
   )
 }
 
-export default mainPage;
+export default MainNav;

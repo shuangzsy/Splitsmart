@@ -59,8 +59,9 @@ h1 {
   justify-content: center;
   padding: 30px;
   margin: 0 auto;
-  width: 40vw;
+  width: 30vw;
   font-family: 'Varela Round', sans-serif;
+  
 }
 
 .login_form {
@@ -70,12 +71,13 @@ h1 {
   padding-top: 2rem;
   padding-bottom: 2rem;
   text-align: left;
-  width: 60vw;
+  width: 50vw;
   font-family: 'Varela Round', sans-serif;
 }
 
 .login_form_details > input {
   padding: 8px;
+  border: 1px solid lightgray;
 }
 
 .login_form_details > label {
@@ -86,6 +88,7 @@ h1 {
   padding: 8px;
   margin-top: 10px;
   font-size: 20px;
+  border: 1px solid lightgray;
 }
 
 .signup_form_details {
@@ -94,13 +97,14 @@ h1 {
   justify-content: center;
   padding: 30pxx;
   margin: 0 auto;
-  width: 40vw;
+  width: 30vw;
   font-family: 'Varela Round', sans-serif;
 
 }
 
 .signup_form_details > input {
   padding: 8px;
+  border: 1px solid lightgray;
 }
 
 .signup_form_details > label {
@@ -111,20 +115,23 @@ h1 {
   padding: 8px;
   margin-top: 10px;
   font-size: 20px;
+  border: 1px solid lightgray;
+  background-color: rgb(255, 101, 47);
+  color: white;
 }
 
 
 
 .signup_form {
   display: inline-block;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
-  border-radius: 16px;
+  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+  border-radius: 16px; */
   padding-top: 2rem;
   padding-bottom: 2rem;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-  width: 60vw;
+  width: 50vw;
   font-family: 'Varela Round', sans-serif;
 }
 
