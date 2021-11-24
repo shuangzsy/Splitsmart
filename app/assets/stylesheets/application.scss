@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+@import "./reset.scss";
+@import "./components/dashboard_nav.scss";
 
 .header {
   display: flex;
@@ -24,6 +26,7 @@ h1 {
   font-size: 1.75rem;
   font-weight: 400;
   margin-left: 5px;
+  // background-color: orange;
 }
 
 .header_logo{

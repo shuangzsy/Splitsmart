@@ -11,11 +11,12 @@ import {
   HashRouter
 } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import WelcomePage from './welcome';
 
 const App = () => (
   <>
     <Switch>
-      <AuthRoute exact path="/" component={mainNav} /> 
+      <AuthRoute exact path="/" component={WelcomePage} /> 
       {/* <AuthRoute exact path="/login" component={mainPage} /> */}
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />

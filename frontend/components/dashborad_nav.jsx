@@ -12,7 +12,7 @@ const DashboardNav = (props) => {
 
         <ul className="header-list group">
           <li>
-            <a href="#">{props.CurrentUser}</a>
+            <a href="#">{props.currentUser.username}</a>
             <ul className="header-notifications">
               <li><a href="#">Your account</a></li>
               <li><a href="#">Create a group</a></li>
