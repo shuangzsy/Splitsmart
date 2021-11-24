@@ -69,8 +69,8 @@ export default class SessionForm extends React.Component {
               <label htmlFor="password">Password</label>
               <input id="password" type="password" onChange={this.update('password')} />
               <button style={{ backgroundColor: "#1CC29F", color: 'white' }} >Log in</button>
-              <button onClick={() => this.props.submitForm(this.props.demoUser)}>Demo</button>
             </form>
+            <button onClick={() => this.props.submitForm(this.props.demoUser)}>Demo</button>
           </div>
         </div>
       </div>

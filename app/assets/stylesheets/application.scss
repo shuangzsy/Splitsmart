@@ -16,7 +16,7 @@
 @import "./reset.scss";
 @import "./components/dashboard_nav.scss";
 
-.header {
+.header_main {
   display: flex;
   justify-content: space-between;
 
@@ -29,10 +29,6 @@ h1 {
   // background-color: orange;
 }
 
-.header_logo{
-  font-size: larger;
-  font-weight: 600;
-}
 .login {
   color: #1CC29F;
   padding-left: 1rem;
