@@ -19,7 +19,10 @@
 .header_main {
   display: flex;
   justify-content: space-between;
-
+  ul {
+     display: flex;
+     align-items: center;
+  }
 }
 
 h1 {

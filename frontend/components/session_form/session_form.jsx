@@ -10,6 +10,10 @@ export default class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    this.props.removeErrors()
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.submitForm(this.state);
