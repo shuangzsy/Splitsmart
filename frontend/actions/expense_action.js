@@ -1,7 +1,7 @@
-import * as ExpenseAPIUtil from '../util/user_api_util';
-export const RECEIVE_EXPENSES = "RECEIVE_EVENTS";
-export const RECEIVE_EVENT = "RECEIVE_EVENT";
-export const REMOVE_EVENT = "REMOVE_EVENT";
+import * as ExpenseAPIUtil from '../util/expense_util';
+export const RECEIVE_EXPENSES = "RECEIVE_EXPENSES";
+export const RECEIVE_EXPENSE = "RECEIVE_EXPENSE";
+export const REMOVE_EXPENSE = "REMOVE_EXPENSE";
 
 export const receiveExpenses = expenses => ({
   type: RECEIVE_EXPENSES,
