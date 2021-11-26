@@ -22,7 +22,7 @@ class Api::ExpensesController < ApplicationController
     if @expense
       render :show
     else
-      render json["Expense does not exsist"], status 404
+      render json: ["Expense does not exsist"], status: 404
     end
   end
 
@@ -41,7 +41,7 @@ class Api::ExpensesController < ApplicationController
       @expense.destroy
       render :show
     else
-      render json["Expense does not exsist"], status 404
+      render json["Expense does not exsist"], status: 404
     end
   end
 

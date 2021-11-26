@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {logout} from '../../actions/session_actions';
 import DashboardNav from '../dashborad_nav';
+import ExpenseIndexContainer from '../expense/expense_index_container';
 
 /*
 Export an `EventIndex` presentational component that renders a list (`ul`) of
@@ -25,7 +26,7 @@ class UserProfile extends React.Component {
     return (
       <div>
         <DashboardNav currentUser={this.props.currentUser} UserLogout = {this.props.UserLogout}/>
-        <button onClick={() => <AddExpense/>}>Add Expenses</button>
+        <ExpenseIndexContainer />
       </div>
     )
   }

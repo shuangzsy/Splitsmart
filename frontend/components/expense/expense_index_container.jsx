@@ -4,7 +4,7 @@ import ExpenseIndex from './expense_index';
 
 
 const mSTP = (state) => ({
-  expenses: Object.values(state.expenses)
+  expenses: Object.values(state.entities.expenses)
 });
 
 const mDTP = (dispatch) => ({

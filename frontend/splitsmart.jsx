@@ -14,5 +14,4 @@ document.addEventListener("DOMContentLoaded", () => {
   window.store = store;
   window.UserApi = UserApi;
   window.SessionApi = SessionApi;
-  window.logout = logout;
 });
