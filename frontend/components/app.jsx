@@ -18,6 +18,7 @@ import WelcomePage from './welcome';
 
 const App = () => (
   <>
+    
     <Switch>
       <AuthRoute exact path="/" component={WelcomePage} /> 
       {/* <AuthRoute exact path="/login" component={mainPage} /> */}

@@ -11,17 +11,13 @@ const mSTP = state => ({
     settled: false,
     group_name:''
   },
-  formType: "Create Expense"
+  formType: "Add an expense"
 })
 
 const mDTP = dispatch => ({
   
   submitExpense: expense => dispatch(createExpense(expense)),
   closeModal: () => dispatch(closeModal()),
-  otherForm: (
-    <button onClick={() => dispatch(openModal('addexpense'))}>
-      Signup
-    </button>)
 })
 
 export default connect(mSTP, mDTP)(ExpenseForm)

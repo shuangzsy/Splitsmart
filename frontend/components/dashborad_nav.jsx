@@ -7,7 +7,7 @@ const DashboardNav = (props) => {
       <nav className="header-nav group">
 
         <h1 className="header-logo">
-          <a href="#">Splitsmart</a>
+          <Link to='/'>Splitsmart</Link>
         </h1>
 
         <ul className="header-list group">
