@@ -1,6 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
+import CreateExpenseFormContainer from './expense/create_expense_form_container';
 
 
 function Modal({ modal, closeModal }) {
@@ -10,7 +11,7 @@ function Modal({ modal, closeModal }) {
   let component;
   switch (modal) {
     case 'addexpense':
-      component = </>;
+      component = <CreateExpenseFormContainer />;
       break;
     default:
       return null;

@@ -9,7 +9,7 @@ class Api::ExpensesController < ApplicationController
 
   def create
     @expense = Expense.new(expense_params)
-    @expenses.creator_id = current_user.id
+    @expense.creator_id = current_user.id
     if @expense.save
       render :show
     else

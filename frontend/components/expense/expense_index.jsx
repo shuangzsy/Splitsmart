@@ -20,7 +20,7 @@ class ExpenseIndex extends React.Component {
             expenses.map(expense => <ExpenseIndexItem expense={expense} deleteExpense={deleteExpense} />)
           }
         </ul>
-        <Link to="/expenses/new">Add Expense</Link>
+        
       </div>
     )
   }

@@ -14,7 +14,7 @@ const expenseReducer = (state = {}, action) => {
     case RECEIVE_EXPENSES:
       return action.expenses;
     case REMOVE_EXPENSE:
-      delete newState[action.expense.id];
+      delete newState[action.expenseId];
       return newState;
     default:
       return state;
