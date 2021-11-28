@@ -19,9 +19,9 @@ class UserProfile extends React.Component {
     return (
       <div>
         <Modal/>
-        <DashboardNav currentUser={this.props.currentUser} UserLogout = {this.props.UserLogout}/>
-        <Link to="/all">All Expenses</Link>
-        {this.props.AddExpense}
+        <div><DashboardNav currentUser={this.props.currentUser} UserLogout={this.props.UserLogout} /></div>
+        <div><Link to="/all">All Expenses</Link></div>
+        <div>{this.props.AddExpense}</div>
       </div>
     )
   }

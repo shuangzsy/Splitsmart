@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const DashboardNav = (props) => {
   return (
-    <header className="header">
+    <div className="dashboard-header">
       <nav className="header-nav group">
 
         <h1 className="header-logo">
-          <Link to='/'>Splitsmart</Link>
+          <Link to='/dashboard'>Splitsmart</Link>
         </h1>
 
         <ul className="header-list group">
@@ -24,7 +24,7 @@ const DashboardNav = (props) => {
         </ul>
 
       </nav>
-    </header>
+    </div>
 
   )
 }

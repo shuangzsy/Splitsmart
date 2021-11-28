@@ -14,6 +14,11 @@ class User < ApplicationRecord
   foreign_key: :creator_id,
   class_name: :Expense
 
+  has_many :splits,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: :Split
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     user && user.is_password?(password) ? user : nil
