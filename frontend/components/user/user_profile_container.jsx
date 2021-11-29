@@ -13,7 +13,7 @@ const mDTP = (dispatch) => ({
   UserLogout: () => dispatch(logout()),
   AddExpense: (
   <button onClick={() => dispatch(openModal('addexpense'))}>
-    Add Expense
+    Add an expense
   </button>)
 })
 

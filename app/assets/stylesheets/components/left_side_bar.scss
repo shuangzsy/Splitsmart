@@ -1,0 +1,61 @@
+.left_side_bar{
+  text-align: left;
+  width: 172px;
+  height: 512px;
+  margin-left: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #999;
+  position: relative;
+  z-index: 50;
+}
+
+.dashboard {
+  border-left: 6px solid #5bc5a7;
+  color: #5bc5a7;
+  // font-weight: bold; 
+  width: 153px;
+  height: 19px;
+  padding: 3px 8px 5px 5px;
+  margin: 11px 0 0;
+}
+
+  .dashboard a {
+    font-size: 16px;
+    color: #5bc5a7;
+    font-weight: bold;
+  }
+
+  .activity {
+  // border-left: 6px solid #5bc5a7;
+  // font-weight: bold; 
+  width: 153px;
+  height: 19px;
+  padding: 3px 8px 5px 5px;
+  margin: 11px 0 0;
+}
+
+  .activity a{
+    font-size: 16px;
+    color: #999;
+    // font-weight: bold;
+  }
+
+  .all {
+  // border-left: 6px solid #5bc5a7;
+  // font-weight: bold; 
+  width: 153px;
+  height: 19px;
+  padding: 3px 8px 5px 5px;
+  margin: 11px 0 0;
+}
+
+  .all a{
+    font-size: 16px;
+    color: #999;
+    // font-weight: bold;
+  }
+  .left_side_bar_list > li:hover{
+    background-color: lightgrey;
+  }

@@ -13,6 +13,12 @@ body {
 
 .dashboard-header a {
   color: white;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+  // margin-left: -20px;
+  float: left;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .header-notifications a{
@@ -25,11 +31,13 @@ body {
   background-color: #1CC29F;
 }
 
-.header-logo {
+.header-logo a {
   float: left;
-  font-weight: 700;
+  font-weight: 200;
   color: white;
+  font-size: 20px;
 }
+
 
 .header-logo:hover {
   background: #000;
@@ -91,7 +99,7 @@ li:hover .header-notifications {
 }
 
 .header-notifications > li {
-  // border-top: 1px solid #ccc;
+  border-top: 1px solid #ccc;
   color: #000;
 }
 
@@ -99,38 +107,3 @@ li:hover .header-notifications {
   background: #eee;
 }
 
-/* PHASE 3: Layout */
-
-.content {
-  position: relative;
-  margin: 0 auto;
-  background: #fff;
-  width: 900px;
-  // border-left: 1px solid #ccc;
-  // border-right: 1px solid #ccc;
-  // border-bottom: 1px solid #ccc;
-}
-
-.content:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 240px;
-  width: 1px;
-}
-
-.content-sidebar {
-  float: left;
-  width: 200px;
-  min-height: 200px;
-  padding: 20px;
-}
-
-.content-main {
-  float: left;
-  width: 620px;
-  min-height: 200px;
-  padding: 20px;
-}

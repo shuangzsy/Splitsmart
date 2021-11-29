@@ -21,9 +21,12 @@ class ExpenseForm extends React.Component {
 
   render(){
     return (
-      <form onSubmit = {this.handleSubmit}>
-        <h1>{this.props.formType}</h1>
-        <div onClick={this.props.closeModal} className="close-x">X</div>
+      <form className = "expense_form" onSubmit = {this.handleSubmit}>
+        <div className="expense_form_header">
+          {this.props.formType}
+          <span onClick={this.props.closeModal} className="close-x">X</span>
+        </div>
+        
         <label htmlFor=""> With you and:</label>
         <label htmlFor="">Description</label>
         <input type="text" value={this.state.description} onChange={this.update('description')}/>

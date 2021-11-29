@@ -1,0 +1,21 @@
+.expense_form {
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 330px;
+  padding: 10px;
+  
+}
+
+.expense_form_header {
+  display: flex;
+  justify-content: space-between;
+  background: #5cc5a7;
+  color: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #36977b;
+  text-shadow: 0 -1px 0 #318a71;
+  font-size: 18px;
+  font-weight: bold;
+}

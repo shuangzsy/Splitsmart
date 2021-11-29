@@ -8,21 +8,21 @@ class Api::ExpensesController < ApplicationController
   end
 
   def create
-    filterd_expense_params = expense_params
-    filterd_expense_params.delete(:splits)
-    total_amount = expense_params[:total_amount].to_f * 100
+    # filterd_expense_params = expense_params
+    # filterd_expense_params.delete(:splits)
+    # total_amount = expense_params[:total_amount].to_f * 100
 
-    @expense = Expense.create(filterd_expense_params)
-    @splits = expense_params[:splits].to_a.map do |split|
-      user = User.find_by(email: split[0])
-      split_amount = (total_amount * split[1].to_f).round
-      Split.create(
-        user_id: user.id, 
-        owe_amount: 
-      )
-    end
+    # @expense = Expense.create(filterd_expense_params)
+    # @splits = expense_params[:splits].to_a.map do |split|
+    #   user = User.find_by(email: split[0])
+    #   split_amount = (total_amount * split[1].to_f).round
+    #   Split.create(
+    #     user_id: user.id, 
+    #     owe_amount: 
+    #   )
+    # end
 
-    @expense.creator_id = current_user.id
+    # @expense.creator_id = current_user.id
     # if @expense.save
     #   render :show
     # else
