@@ -1,6 +1,6 @@
 class Expense < ApplicationRecord
   validates :settled, inclusion: { in: [true, false] }
-  validates :description, :total_amount, :creator_id, :settled, presence: true
+  validates :description, :total_amount, :creator_id, presence: true
 
   belongs_to :user,
   primary_key: :id,

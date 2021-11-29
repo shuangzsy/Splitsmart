@@ -26,8 +26,8 @@ export const requestExpense = (expenseId) => (dispatch) => (
   ExpenseAPIUtil.getExpense(expenseId).then(expense => dispatch(receiveExpense(expense)))
 );
 
-export const createExpense = (expense) => (dispatch) => (
-  ExpenseAPIUtil.createExpense(expense).then(expense => dispatch(receiveExpense(expense)))
+export const createExpense = (expense, split) => (dispatch) => (
+  ExpenseAPIUtil.createExpense(expense, split).then(expense => dispatch(receiveExpense(expense)))
 );
 
 export const updateExpense = (expense) => (dispatch) => (

@@ -28,6 +28,7 @@ class ExpenseForm extends React.Component {
         </div>
         
         <label htmlFor=""> With you and:</label>
+        <input type="text" />
         <label htmlFor="">Description</label>
         <input type="text" value={this.state.description} onChange={this.update('description')}/>
         <label htmlFor="">Total Amount</label>
