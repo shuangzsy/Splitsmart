@@ -14,6 +14,7 @@ const expenseReducer = (state = {}, action) => {
       return action.user.expenses
     case RECEIVE_EXPENSE:
       newState[action.expense.id] = action.expense;
+      // newState[action.splits] = splits
       return newState;
     case RECEIVE_EXPENSES:
       return action.expenses;

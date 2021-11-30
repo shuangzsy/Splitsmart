@@ -1,8 +1,9 @@
-export const createExpense = (expense, split) => (
+export const createExpense = ( expense, splits ) => (
   $.ajax({
     method: 'POST',
     url: '/api/expenses',
-    data: { expense, split }
+    data: { expense, splits }
+    // data: {payload}
   })
 );
 

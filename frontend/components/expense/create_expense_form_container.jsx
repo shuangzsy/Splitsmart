@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { createExpense } from '../../actions/expense_action';
 import ExpenseForm from './expense_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { withRouter } from 'react-router-dom';
 
 const mSTP = state => ({
   expense: {
@@ -11,13 +12,15 @@ const mSTP = state => ({
     settled: false,
     group_name:''
   },
+  splits: [[state.session.currentUser.email, 0.5],['',0.5]],
   formType: "Add an expense"
 })
 
 const mDTP = dispatch => ({
   
-  submitExpense: expense => dispatch(createExpense(expense)),
+  submitExpense: (expense, splits) => dispatch(createExpense(expense, splits)),
+  // submitExpense: ({ expense, splits }) => dispatch(createExpense({ expense, splits })),
   closeModal: () => dispatch(closeModal()),
 })
 
-export default connect(mSTP, mDTP)(ExpenseForm)
+export default withRouter(connect(mSTP, mDTP)(ExpenseForm))

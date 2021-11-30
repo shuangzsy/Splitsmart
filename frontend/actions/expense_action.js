@@ -8,10 +8,11 @@ export const receiveExpenses = expenses => ({
   expenses
 });
 
-export const receiveExpense = expense => ({
+export const receiveExpense = (payload) => {
+  return {
   type: RECEIVE_EXPENSE,
-  expense
-});
+  payload}
+};
 
 export const removeExpense = expenseId => ({
   type: REMOVE_EXPENSE,
@@ -26,9 +27,13 @@ export const requestExpense = (expenseId) => (dispatch) => (
   ExpenseAPIUtil.getExpense(expenseId).then(expense => dispatch(receiveExpense(expense)))
 );
 
-export const createExpense = (expense, split) => (dispatch) => (
-  ExpenseAPIUtil.createExpense(expense, split).then(expense => dispatch(receiveExpense(expense)))
+export const createExpense = (expense, splits) => (dispatch) => (
+ExpenseAPIUtil.createExpense(expense, splits).then((expense, splits) => dispatch(receiveExpense(expense, splits)))
 );
+
+// export const createExpense = ({ expense, splits }) => (dispatch) => (
+//   ExpenseAPIUtil.createExpense({ expense, splits }).then(({ expense, splits }) => dispatch(receiveExpense({ expense, splits })))
+// );
 
 export const updateExpense = (expense) => (dispatch) => (
   ExpenseAPIUtil.updateExpense(expense).then(expense => dispatch(receiveExpense(expense)))

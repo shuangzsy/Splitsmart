@@ -1,12 +1,12 @@
 .center_bar {
-    margin: 0 200px 0 200px;
+    // margin: 0 200px 0 200px;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
     min-height: 100%;
     -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
     -moz-box-shadow: 0 0 12px rgba(0,0,0,0.2);
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
-    width: 558px;
+    width: 55%;
     height: 1000px;
 }
 
@@ -14,10 +14,10 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     height: 40px;
-    width: 538px;
+    width: auto;
     position: relative;
     z-index: 9;
-    background: #eee;
+    background:#eee;
     border-bottom: none;
     padding: 13px 10px 10px;
     border-bottom: 1px solid #ddd;
