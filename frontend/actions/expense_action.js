@@ -20,20 +20,16 @@ export const removeExpense = expenseId => ({
 });
 
 export const requestExpenses = () => (dispatch) => (
-  ExpenseAPIUtil.getExpenses().then(expenses => dispatch(receiveExpenses(expenses)))
+  ExpenseAPIUtil.getExpenses().then((expenses) => dispatch(receiveExpenses(expenses)))
 );
 
 export const requestExpense = (expenseId) => (dispatch) => (
-  ExpenseAPIUtil.getExpense(expenseId).then(expense => dispatch(receiveExpense(expense)))
+  ExpenseAPIUtil.getExpense(expenseId).then(({expense, splits}) => dispatch(receiveExpense({expense,splits})))
 );
 
 export const createExpense = (expense, splits) => (dispatch) => (
 ExpenseAPIUtil.createExpense(expense, splits).then((expense, splits) => dispatch(receiveExpense(expense, splits)))
 );
-
-// export const createExpense = ({ expense, splits }) => (dispatch) => (
-//   ExpenseAPIUtil.createExpense({ expense, splits }).then(({ expense, splits }) => dispatch(receiveExpense({ expense, splits })))
-// );
 
 export const updateExpense = (expense) => (dispatch) => (
   ExpenseAPIUtil.updateExpense(expense).then(expense => dispatch(receiveExpense(expense)))
