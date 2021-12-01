@@ -6,13 +6,13 @@ import { withRouter } from 'react-router-dom';
 
 const mSTP = state => ({
   expense: {
-    description: 'Enter a description',
+    description: '',
     total_amount: 0,
     creator_id: state.entities.users.id,
     settled: false,
     group_name:''
   },
-  splits: [[state.session.currentUser.email, 0.5],['',0.5]],
+  splits: [[state.session.currentUser.email, -0.5],['',0.5]],
   formType: "Add an expense"
 })
 
