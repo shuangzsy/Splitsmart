@@ -9,7 +9,10 @@ const splitReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_EXPENSE:
-      newState[action.expense.id] = action.splits;
+      // debugger
+      Object.values(action.splits).map(split =>{
+        newState[split.id] = split
+      })
       return newState;
     default:
       return state;

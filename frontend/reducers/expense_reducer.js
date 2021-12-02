@@ -10,7 +10,6 @@ const expenseReducer = (state = {}, action) => {
   const newState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      console.log(action.user)
       return action.user.expenses
     case RECEIVE_EXPENSE:
       newState[action.expense.id] = action.expense;

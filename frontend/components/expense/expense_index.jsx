@@ -17,7 +17,7 @@ class ExpenseIndex extends React.Component {
       <div>
         <ul>
           {
-            expenses.map(expense => <ExpenseIndexItem expense={expense} deleteExpense={deleteExpense} />)
+            expenses.map(expense => <ExpenseIndexItem key={expense.id} expense={expense} deleteExpense={deleteExpense} />)
           }
         </ul>
         
