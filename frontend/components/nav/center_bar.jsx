@@ -23,6 +23,10 @@ class CenterNav extends React.Component {
             <li>you are owed <strong>$5101</strong></li>
           </ul>
         </div>
+        <div className="you-owe-label">
+          <p>YOU OWE</p>
+          <p>YOU ARE OWED</p>
+        </div>
         <div>
           <SplitIndexContainer/>
         </div>

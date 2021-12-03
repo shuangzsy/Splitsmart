@@ -23,7 +23,7 @@ class UserProfile extends React.Component {
           <div className='left_side_bar'><LeftNav /></div>
           <div className='center_bar'><CenterNav AddExpense={this.props.AddExpense}/></div>
           <div className='right-bar'>
-            <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638523939/SeekPng.com_earn-money-png_2574536_1_1_nytkbg.png" alt="" />
+            <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638552017/Screen_Shot_2021-12-03_at_9.19.58_AM_dleon5.png" alt="" />
           </div>      
         </div>
       </div>

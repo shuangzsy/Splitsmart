@@ -20,8 +20,11 @@ class LeftNav extends React.Component {
           <li className="all">
             <Link to="/all">All Expenses</Link>
           </li>
-          <li><span>Groups</span></li>
-          <li><span>Friends</span></li>
+          {/* <li><span>Groups</span></li>
+          <li><span>Friends</span></li> */}
+          <li>
+            <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638551864/Screen_Shot_2021-12-03_at_9.16.54_AM_vlenuy.png" alt="" />
+          </li>
         </ul>
       </div>
     )

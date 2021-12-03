@@ -6,7 +6,7 @@
     -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
     -moz-box-shadow: 0 0 12px rgba(0,0,0,0.2);
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
-    width: 55%;
+    width: 40%;
     height: 1000px;
 }
 
@@ -95,3 +95,16 @@
   width: 50%;
 }
 
+.you-owe-label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.you-owe-label p {
+  color: #999;
+  font-size: 14px;
+  margin-left: 8px;
+  margin-top: 6px;
+  margin-right: 8px;
+  font-weight: bold;
+}

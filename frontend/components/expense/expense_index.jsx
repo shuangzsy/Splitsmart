@@ -38,6 +38,9 @@ class ExpenseIndex extends React.Component {
               }
             </ul>
           </div>
+          <div>
+            <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638552017/Screen_Shot_2021-12-03_at_9.19.58_AM_dleon5.png" alt="" />
+          </div>
         </div>
       </div>
     )
