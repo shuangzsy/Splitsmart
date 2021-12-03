@@ -8,7 +8,7 @@ class Api::ExpensesController < ApplicationController
   end
 
   def create
-    total_amount = expense_params[:total_amount].to_f * 100
+    total_amount = expense_params[:total_amount].to_f   #* 100
     split_params = params[:splits].to_unsafe_h
     # debugger
 

@@ -13,7 +13,7 @@ class ExpenseShow extends React.Component {
     if (this.props.splits[0] === undefined) return "";
     return (
       <div>
-        <p>{
+        <div>{
           this.props.splits.map(split => {
             return(
               <div>
@@ -22,7 +22,7 @@ class ExpenseShow extends React.Component {
               </div>
             )
           })
-        }</p>
+        }</div>
       </div>
     )
   }

@@ -24,13 +24,13 @@ export const removeExpense = expenseId => ({
 
 export const requestExpenses = () => (dispatch) => (
   ExpenseAPIUtil.getExpenses().then(
-    (payload) => {debugger; dispatch(receiveExpenses(payload))}
+    (payload) => {dispatch(receiveExpenses(payload))}
   )
 );
 
 export const requestExpense = (expenseId) => (dispatch) => (
   ExpenseAPIUtil.getExpense(expenseId).then(
-    (payload) => {debugger; dispatch(receiveExpense(payload))}
+    (payload) => {dispatch(receiveExpense(payload))}
   )
 );
 
@@ -45,6 +45,6 @@ export const updateExpense = (expense) => (dispatch) => (
 );
 
 export const deleteExpense = (expenseId) => (dispatch) => (
-  ExpenseAPIUtil.deleteExpense(expenseId).then(expense => dispatch(removeExpense(expense.id)))
+  ExpenseAPIUtil.deleteExpense(expenseId).then(({expense}) => dispatch(removeExpense(expense.id)))
 );
 

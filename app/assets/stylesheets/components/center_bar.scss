@@ -44,3 +44,29 @@
   display: flex;
   justify-content: space-between;
 }
+
+.center-bar-body{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 40px;
+  width: auto;
+  position: relative;
+  z-index: 9;
+  background:#eee;
+  border-bottom: none;
+  padding: 13px 10px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.center-bar-body li{
+  width: 175px;
+  text-align: center;
+  padding: 0 5px;
+  border-left: 1px solid #ddd;
+  line-height: 16px;
+  font-size: 13px;
+  color: #999;
+}

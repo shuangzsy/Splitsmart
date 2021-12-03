@@ -23,6 +23,8 @@ class UserProfile extends React.Component {
           <div className='left_side_bar'><LeftNav /></div>
           <div className='center_bar'><CenterNav AddExpense={this.props.AddExpense}/></div>
           
+          {/* <div className='total-balance'><TotBal/></div> */}
+          
         </div>
       </div>
     )

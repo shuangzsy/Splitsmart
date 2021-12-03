@@ -122,3 +122,31 @@
 .currency_code {
   margin-left: 15px;
 }
+
+.all-expenses{
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  min-height: 100%;
+  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+  width: 55%;
+  height: 1000px;
+}
+
+.expense-item-details {
+  padding-top: 33px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #333333;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.expense-item-details a {
+  color: #333333;
+
+}
+

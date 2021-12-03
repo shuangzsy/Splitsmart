@@ -6,3 +6,13 @@ json.expenses do
         end
     end
 end
+
+json.splits do 
+    @expenses.each do |expense|
+        expense.splits.each do |split|
+            json.set! split.id do
+                json.partial! 'api/expenses/split', split: split
+            end
+        end
+    end
+end
