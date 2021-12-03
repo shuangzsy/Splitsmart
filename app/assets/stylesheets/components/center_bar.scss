@@ -70,3 +70,28 @@
   font-size: 13px;
   color: #999;
 }
+
+.owe-details{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.owe-you-details {
+  padding: 7px 13px 7px 13px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #5bc5a7;
+  border-right: 1px solid #ddd;
+  width: 50%;
+}
+
+.you-owe-details {
+  padding: 7px 13px 7px 13px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #ff652f;
+  border-right: 1px solid #ddd;
+  width: 50%;
+}
+

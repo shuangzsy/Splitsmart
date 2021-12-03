@@ -6,6 +6,8 @@ import SplitIndex from './split_index';
 const mSTP = (state) => ({
   expenses: Object.values(state.entities.expenses),
   splits: Object.values(state.entities.splits),
+  currentUser: state.session.currentUser.email,
+  currentUsername: state.session.currentUser.username
 });
 
 const mDTP = (dispatch) => ({

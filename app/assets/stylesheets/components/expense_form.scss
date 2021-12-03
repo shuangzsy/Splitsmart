@@ -10,6 +10,16 @@
   border: solid;
   border-color: lightgrey;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+}
+
+.expense_form input{
+  outline: none;
+  border: none !important;
+  box-shadow: none !important;
+  text-align: left;
+  border-bottom: 1px dashed #ccc !important;
+
 }
 
 .expense_form_header {
@@ -132,6 +142,7 @@
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
   width: 55%;
   height: 1000px;
+  background-color: white;
 }
 
 .expense-item-details {

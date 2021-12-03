@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Modal from '../modal'
+import Modal from '../modal';
+import SplitIndexContainer from '../expense/split_index_container';
 
 class CenterNav extends React.Component {
   constructor(props) {
@@ -17,10 +18,13 @@ class CenterNav extends React.Component {
         </div>
         <div >
           <ul className="center-bar-body">
-            <li>total balance</li>
-            <li>you owe</li>
-            <li>you are owed</li>
+            <li>total balance <strong>$5038</strong></li>
+            <li>you owe <strong>$63</strong></li>
+            <li>you are owed <strong>$5101</strong></li>
           </ul>
+        </div>
+        <div>
+          <SplitIndexContainer/>
         </div>
       </div>
     )

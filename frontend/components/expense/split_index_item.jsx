@@ -1,21 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SplitIndexItem = ({ split, deleteExpense }) => {
-  return (
-    <li className="split-item-details">
-      <div>
-        <p>hello world</p>
-        <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638476337/Screen_Shot_2021-12-02_at_12.17.59_PM_mk8tvd.png" alt="" />
-      </div>
-      <div>
-        <Link to={`/expenses/${expense.id}/edit`}>Edit</Link>
-        <button onClick={() => deleteExpense(expense.id)}>Delete</button>
-      </div>
-
-
-    </li>
-  )
+const SplitIndexItem = ({ split, currentUser, currentUsername }) => {
+    if (split.email !== currentUser && split.oweAmount > 0) return (
+        <div>
+          <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638517195/Screen_Shot_2021-12-02_at_11.39.35_PM_bwjsnw.png" alt="" />
+          {` ${split.username} owes You $${split.oweAmount}`}
+        </div>
+    )
+    else if (split.email !== currentUser && split.oweAmount < 0) return (
+        <div>
+          <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638517195/Screen_Shot_2021-12-02_at_11.39.28_PM_rh8ezb.png" alt="" />
+          {`${currentUsername} You owes ${split.username} $${-split.oweAmount}`}
+        </div>
+    )
+    else return "" ;  
 }
 
 export default SplitIndexItem;
