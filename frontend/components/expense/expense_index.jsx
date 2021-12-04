@@ -23,7 +23,7 @@ class ExpenseIndex extends React.Component {
         <Modal />
         <div><DashboardNav currentUser={this.props.currentUser} UserLogout={this.props.UserLogout} /></div>
         <div className="profile-body">
-          <div className='left_side_bar'><LeftNav /></div>
+          <div className='left_side_bar'><LeftNav expenses={this.props.expenses} splits={this.props.splits} currentUser={this.props.currentUser} /></div>
           {/* <div className='center_bar'><CenterNav AddExpense={this.props.AddExpense} /></div> */}
           <div className="all-expenses">
             <div className="top_bar">

@@ -6,7 +6,9 @@ import { openModal } from '../../actions/modal_actions';
 
 
 const mSTP = (state, ownProps) => ({
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  expenses: Object.values(state.entities.expenses),
+  splits: Object.values(state.entities.splits)
 });
 
 const mDTP = (dispatch) => ({

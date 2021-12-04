@@ -5,7 +5,8 @@ import ExpenseIndex from './expense_index';
 
 const mSTP = (state) => ({
   expenses: Object.values(state.entities.expenses),
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  splits: Object.values(state.entities.splits)
 });
 
 const mDTP = (dispatch) => ({
