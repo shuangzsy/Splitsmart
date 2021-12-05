@@ -41,7 +41,7 @@ class LeftNav extends React.Component {
             <ul>
               {
                 uniqueGroup.map(group => {
-                  if (group !== "")
+                  if (group.length > 0)
                   return (
                     <li>
                       <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638648395/computer-icons-price-tag-tag-258a86a3764715cfe2ab536ca808aec6_1_gxw3g2.png" alt="" />
