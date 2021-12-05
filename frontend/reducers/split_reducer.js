@@ -10,6 +10,7 @@ const splitReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_EXPENSES:
     case RECEIVE_EXPENSE:
+      if (!action.splits) return newState;
       Object.values(action.splits).map(split =>{
         newState[split.id] = split
       })

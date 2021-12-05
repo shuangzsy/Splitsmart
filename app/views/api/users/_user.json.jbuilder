@@ -1,4 +1,7 @@
-json.extract! user, :id, :email, :username
+json.user do
+    json.extract! user, :id, :email, :username
+end
+
 json.expenses do
     @user.expenses.each do |expense|
         json.set! expense.id do

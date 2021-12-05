@@ -10,13 +10,13 @@ const expenseReducer = (state = {}, action) => {
   const newState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      return action.user.expenses
+      return action.expenses || newState
     case RECEIVE_EXPENSE:
       newState[action.expense.id] = action.expense;
       // newState[action.splits] = splits
       return newState;
     case RECEIVE_EXPENSES:
-      return action.expenses;
+      return action.expenses || newState;
     case REMOVE_EXPENSE:
       delete newState[action.expenseId];
       return newState;

@@ -11,14 +11,12 @@ const usersReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
     case RECEIVE_USER:
-      console.log(action.user)
       let user = Object.assign({}, action.user);
       delete user["expenses"]
       newState[action.user.id] = user;
       return newState;
     case RECEIVE_USERS:
       action.users.forEach(user => {
-        delete user['expenses']
         newState[user.id] = user
       })
       return newState;
