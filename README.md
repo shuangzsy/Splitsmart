@@ -42,13 +42,14 @@ Schema is created in a very flexible way, which enable the uers to split with mu
 
 # Futures
 
-Current features
-User auth
-Add expenses and split evenly
-All expenses
+## Current features
+* User auth
+* Demo user
+* Add expenses and split evenly
+* All expenses
 
-Future features
-add mutiple user in a expense
-have mutiple split options
-have activity page for the user activites
+## Future features
+* add mutiple user in a expense
+* have mutiple split options
+* have activity page for the user activites
 
