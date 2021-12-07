@@ -1,24 +1,25 @@
-# README
+# Splitsmart
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Splitwise clone for friends to split costs between friends and family members.
 
-Things you may want to cover:
+# Development
+# 1. Expenses
+Users can record a expense split between themselves and another user, choosing who made the initial payment. The expense is recorded for both users, and a running balance is calculated and displayed. A user can view expenses and splits between another user, as well as between all their expenses and friends. Expenses can also be deleted and can only be viewed by those involved.
 
-* Ruby version
+```
+json.user do
+    json.extract! user, :id, :email, :username
+end
 
-* System dependencies
+json.expenses do
+    @user.expenses.each do |expense|
+        json.set! expense.id do
+            json.extract! expense, :id, :description, :total_amount, :creator_id, :settled, :created_at, :group_name
+        end
+    end
+end
+```
 
-* Configuration
+Schema is created in a very flexible way, which enable the uers to split with mutiple users and using defferent splits way.
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
