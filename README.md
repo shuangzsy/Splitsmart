@@ -20,6 +20,35 @@ json.expenses do
 end
 ```
 
+# Schema
 Schema is created in a very flexible way, which enable the uers to split with mutiple users and using defferent splits way.
+## expenses
 
+| column name   | data type | details               |
+|---------------|-----------|-----------------------|
+| id            | integer   | not null, primary key |
+| description   | text    | not null                      |
+| total_amount | float   | not null              |
+| creator_id    | integer    | not null, indexed,foreign key |
+| create_date   | date      | not null                      |
+| group_name        | string | indexed                       |
+| settled      | boolean   |not null|
+| created_at      | datetime  | not null                      |
+| updated_at      | datetime  |  not null                     |
+
+* creator_id references users
+* index on creator_id
+* index on group_name
+
+# Futures
+
+Current features
+User auth
+Add expenses and split evenly
+All expenses
+
+Future features
+add mutiple user in a expense
+have mutiple split options
+have activity page for the user activites
 
