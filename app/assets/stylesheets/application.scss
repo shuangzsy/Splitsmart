@@ -118,6 +118,7 @@ h1 {
 
 .signup_form_details > button {
   padding: 8px;
+  padding-bottom: 0px;
   margin-top: 10px;
   font-size: 20px;
   border: 1px solid lightgray;
@@ -150,8 +151,20 @@ h1 {
   width: 100vw;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.login_form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
 }
 
 .demo-button {
-  float: right;
+  padding: 8px;
+  font-size: 20px;
+  border: 1px solid lightgray;
+  width: 30vw;
 }
+
