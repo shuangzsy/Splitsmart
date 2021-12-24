@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   attr_reader :password
-  validates :email, uniqueness: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
   validates :email,
             :username,
             :password_digest,
@@ -18,6 +18,24 @@ class User < ApplicationRecord
   primary_key: :id,
   foreign_key: :user_id,
   class_name: :Split
+
+  has_many :friends_on_list,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: :Friend
+
+  has_many :friends_of,
+  primary_key: :id,
+  foreign_key: :friend_id,
+  class_name: :Friend
+
+  has_many :friends,
+  through: :friends_of,
+  source: :friender
+
+  has_many :frienders,
+  through: :friends_on_list,
+  source: :friend
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

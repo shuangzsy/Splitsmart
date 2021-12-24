@@ -28,11 +28,10 @@ ActiveRecord::Schema.define(version: 2021_12_24_200436) do
   end
 
   create_table "friends", force: :cascade do |t|
-    t.integer "user1_id", null: false
-    t.integer "user2_id", null: false
+    t.integer "user_id", null: false
+    t.integer "friend_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user1_id", "user2_id"], name: "index_friends_on_user1_id_and_user2_id", unique: true
   end
 
   create_table "splits", force: :cascade do |t|
