@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_27_233627) do
+ActiveRecord::Schema.define(version: 2021_12_24_200436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 2021_11_27_233627) do
     t.string "group_name"
     t.index ["creator_id"], name: "index_expenses_on_creator_id"
     t.index ["group_name"], name: "index_expenses_on_group_name"
+  end
+
+  create_table "friends", force: :cascade do |t|
+    t.integer "user1_id", null: false
+    t.integer "user2_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user1_id", "user2_id"], name: "index_friends_on_user1_id_and_user2_id", unique: true
   end
 
   create_table "splits", force: :cascade do |t|
