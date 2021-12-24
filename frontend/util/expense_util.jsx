@@ -21,11 +21,11 @@ export const getExpense = (id) => (
   })
 );
 
-export const updateExpense = (expense) => (
+export const updateExpense = (expense, splits) => (
   $.ajax({
     method: 'PATCH',
     url: `api/expenses/${expense.id}`,
-    data: { expense }
+    data: { expense, splits }
   })
 );
 

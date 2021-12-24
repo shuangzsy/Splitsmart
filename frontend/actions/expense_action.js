@@ -35,13 +35,13 @@ export const requestExpense = (expenseId) => (dispatch) => (
 );
 
 export const createExpense = (expense, splits) => (dispatch) => (
-ExpenseAPIUtil.createExpense(expense, splits).then((payload) => {
-  // debugger
+  ExpenseAPIUtil.createExpense(expense, splits).then((payload) => {
   dispatch(receiveExpense(payload))})
 );
 
-export const updateExpense = (expense) => (dispatch) => (
-  ExpenseAPIUtil.updateExpense(expense).then(expense => dispatch(receiveExpense(expense)))
+export const updateExpense = (expense, splits) => (dispatch) => (
+  ExpenseAPIUtil.updateExpense(expense, splits).then((payload) => {
+    dispatch(receiveExpense(payload))})
 );
 
 export const deleteExpense = (expenseId) => (dispatch) => (
