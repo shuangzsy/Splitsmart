@@ -1,4 +1,4 @@
-import * as ExpenseAPIUtil from '../util/expense_util';
+import * as ExpenseAPIUtil from '../util/expense_api_util';
 export const RECEIVE_EXPENSES = "RECEIVE_EXPENSES";
 export const RECEIVE_EXPENSE = "RECEIVE_EXPENSE";
 export const REMOVE_EXPENSE = "REMOVE_EXPENSE";
