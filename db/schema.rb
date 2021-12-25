@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_12_24_200436) do
 
   create_table "friends", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "friend_id", null: false
+    t.integer "friend_email", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

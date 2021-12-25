@@ -15,7 +15,6 @@ class Api::ExpensesController < ApplicationController
     begin
       Expense.transaction do 
         @expense = Expense.new(expense_params)
-        p @expense
         @expense.total_amount = total_amount
         @expense.creator_id = current_user.id
         @expense.save!
@@ -59,7 +58,7 @@ class Api::ExpensesController < ApplicationController
       @expense.destroy
       render :show
     else
-      render json["Expense does not exsist"], status: 404
+      render json: ["Expense does not exsist"], status: 404
     end
   end
 

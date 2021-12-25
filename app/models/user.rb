@@ -19,23 +19,23 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: :Split
 
-  has_many :friends_on_list,
+  has_many :friends,
   primary_key: :id,
   foreign_key: :user_id,
   class_name: :Friend
 
-  has_many :friends_of,
-  primary_key: :id,
-  foreign_key: :friend_id,
-  class_name: :Friend
+  # has_many :friends_of,
+  # primary_key: :id,
+  # foreign_key: :friend_id,
+  # class_name: :Friend
 
-  has_many :friends,
-  through: :friends_of,
-  source: :friender
+  # has_many :friends,
+  # through: :friends_of,
+  # source: :friender
 
-  has_many :frienders,
-  through: :friends_on_list,
-  source: :friend
+  # has_many :frienders,
+  # through: :friends_on_list,
+  # source: :friend
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
