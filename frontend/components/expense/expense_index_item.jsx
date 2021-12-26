@@ -12,9 +12,9 @@ const ExpenseIndexItem = ({ expense, deleteExpense }) => {
             <div className="total-amount">${expense.totalAmount}</div>
             <div className="edit-by">Added by ... on {expense.createdAt}</div>
             <button className="edit-expense-button">Edit Expense</button >
-            <ExpenseShowContainer expense={expense} />
           </div>
         </div>
+        <div><ExpenseShowContainer expense={expense} /></div>
         <div>       
           <button onClick={() => deleteExpense(expense.id)}>Delete</button>
         </div>
