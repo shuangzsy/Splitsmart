@@ -16,7 +16,7 @@ class ExpenseShow extends React.Component {
           this.props.splits.map(split => {
             return(
               <div>
-                <li>{split.email}</li>
+                <li>{split.username}</li>
                 <li>{split.oweAmount}</li>
               </div>
             )

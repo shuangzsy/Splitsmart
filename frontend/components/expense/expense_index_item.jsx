@@ -4,18 +4,21 @@ import ExpenseShowContainer from './expense_show_container';
 
 const ExpenseIndexItem = ({ expense, deleteExpense }) => {
   return (
-      <li className="expense-item-details">
-        <div>
-          <span>{expense.createdAt}</span>
+      <div className="expense-item-details">
+        <div className="expense-info">
           <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638476337/Screen_Shot_2021-12-02_at_12.17.59_PM_mk8tvd.png" alt="" />
-          <Link to={`/all/${expense.id}`}>{expense.description}</Link>
-          <ExpenseShowContainer expense={expense} />
+          <div>
+            <div>{expense.description}</div>
+            <div className="total-amount">${expense.totalAmount}</div>
+            <div className="edit-by">Added by ... on {expense.createdAt}</div>
+            <button className="edit-expense-button">Edit Expense</button >
+            <ExpenseShowContainer expense={expense} />
+          </div>
         </div>
-        <div>
-          <Link to={`/expenses/${expense.id}/edit`}>Edit</Link>
+        <div>       
           <button onClick={() => deleteExpense(expense.id)}>Delete</button>
         </div>
-      </li>
+      </div>
   )
 }
 
