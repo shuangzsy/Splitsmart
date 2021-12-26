@@ -1,4 +1,12 @@
-.expense-item-details{
+.expense-overview{
+  cursor: pointer;
+  display: inline-block;
+  padding: 0px 5px 6px 0px;
+  line-height: 18px;
+  position: relative;
+}
+
+.all-expense-item-details{
   background-color: #f8f8f8;
   padding: 15px;
   box-shadow: inset 0 5px 7px -5px rgba(0, 0, 0, 0.25), inset 0 -3px 7px -5px rgba(0, 0, 0, 0.25);
@@ -6,11 +14,64 @@
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   line-height: 18px;
   color: #333333;
+  display: flex;
+  flex-direction: column;
+  display: none;
 }
 
+.edit-expense-button{
+  background: #ff652f;
+  color: #fff;
+  text-shadow: 0 -1px 0 #c83400;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+  padding: 2px 6px;
+  font-size: 11px;
+  line-height: 14px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
 
 .expense-info {
+  width: 100%;
   display: flex;
-  
+  flex-direction: row;
+  align-items: flex-start;
+}
 
+.expense-description {
+  font-size: 16px;
+}
+
+.total-amount{
+  // margin-top: -1px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 18px;
+}
+
+.edit-by {
+  margin-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+
+hr {
+  margin: 5px 0;
+  border: 0;
+  // border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff;
+  border-top: 1px solid #ddd;
+}
+
+.all-expense-item-details img {
+  margin-right: 10px;
+}
+
+.split-datails {
+  font-size: 13px;
 }
