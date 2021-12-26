@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 
 class ExpenseShow extends React.Component {
   componentDidMount() {
-    this.props.requestExpense(this.props.match.params.expenseId);
+    this.props.requestExpense(this.props.expense.id);
     
   }
 
   render() {
-    console.log(this.props.splits)
     if (this.props.splits[0] === undefined) return "";
     return (
       <div>
