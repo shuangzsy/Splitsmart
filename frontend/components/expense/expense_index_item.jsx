@@ -8,7 +8,7 @@ const ExpenseIndexItem = ({ expense, deleteExpense }) => {
         <div className="expense-info">
           <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638476337/Screen_Shot_2021-12-02_at_12.17.59_PM_mk8tvd.png" alt="" />
           <div>
-            <div>{expense.description}</div>
+            <div className="expense-description">{expense.description}</div>
             <div className="total-amount">${expense.totalAmount}</div>
             <div className="edit-by">Added by ... on {expense.createdAt}</div>
             <button className="edit-expense-button">Edit Expense</button >
