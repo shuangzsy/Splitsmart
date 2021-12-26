@@ -27,7 +27,7 @@ class ExpenseShow extends React.Component {
                 <div>
                   <div>
                     {/* <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638517195/Screen_Shot_2021-12-02_at_11.39.28_PM_rh8ezb.png" alt="" /> */}
-                    <strong>{split.username}</strong> paid <strong>${split.oweAmount * 2}</strong> and owes <strong>${-split.oweAmount}</strong></div>
+                    <strong>{split.username}</strong> paid <strong>${-split.oweAmount * 2}</strong> and owes <strong>${-split.oweAmount}</strong></div>
                 </div>)
             }
           })

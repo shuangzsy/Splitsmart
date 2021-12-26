@@ -1,9 +1,30 @@
 .expense-overview{
   cursor: pointer;
-  display: inline-block;
-  padding: 0px 5px 6px 0px;
+  display: flex;
+  flex-direction: row;
+  // padding: 0px 5px 0px 0px;
   line-height: 18px;
-  position: relative;
+  height: 55px;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+
+.expense-overview {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.expenseIndex-desription {
+  font-weight: bold;
+  text-align: center;
+  height: 55px;
+  line-height: 55px;
+}
+
+.expense-overview img {
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .all-expense-item-details{
@@ -74,4 +95,23 @@ hr {
 
 .split-datails {
   font-size: 13px;
+}
+
+.expense-date {
+  display: flex;
+  flex-direction: column;
+  height: 55px;
+  justify-content: center;
+  // line-height: 55px;
+  // text-align: center;
+}
+
+.expense-date-month {
+  font-size: 10px;
+  color:#999;
+}
+
+.expense-date-number {
+  font-size: 20px;
+  color: #999;
 }

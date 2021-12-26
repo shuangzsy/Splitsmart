@@ -27,7 +27,7 @@ class ExpenseIndex extends React.Component {
           {/* <div className='center_bar'><CenterNav AddExpense={this.props.AddExpense} /></div> */}
           <div className="all-expenses">
             <div className="top_bar">
-              <span>All Expenses</span>
+              <h1>All expenses</h1>
               <button onClick={() => dispatch(openModal('addexpense'))}>
                 Add an expense
               </button>

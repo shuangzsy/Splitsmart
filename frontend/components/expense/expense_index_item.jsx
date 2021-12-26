@@ -15,12 +15,16 @@ const ExpenseIndexItem = ({ expense, deleteExpense }) => {
     }
   }
 
+  let monthRef = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
   return (
       <>
         <div className="expense-overview" onClick={clickToShow}>
-          <span>{expense.createdAt}</span>
-          <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638476337/Screen_Shot_2021-12-02_at_12.17.59_PM_mk8tvd.png" alt="" /> 
-          <span>{expense.description}</span>
+          <div className='expense-date'>
+            <span className='expense-date-month'>{monthRef[expense.createdAt.slice(5, 7) - 1]}</span>
+            <span className='expense-date-number'>{expense.createdAt.slice(8, 10)}</span>
+          </div>
+          <div><img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638476337/Screen_Shot_2021-12-02_at_12.17.59_PM_mk8tvd.png" alt="" /></div>
+          <div className="expenseIndex-desription">{expense.description}</div>
         </div>
         <div id={expense.id} className="all-expense-item-details">
           <div className="expense-info">
