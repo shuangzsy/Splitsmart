@@ -13,6 +13,7 @@
   line-height: 18px;
   height: 55px;
   width: 100%;
+  padding-left: 5px;
 }
 
 .expense-overview {
@@ -168,8 +169,32 @@ hr {
   background-color: white;
   color: rgb(218, 9, 9);
   font-weight: bold;
+  display: none;
 }
 
+.expense-delete-button-container {
+  width: 40px;
+  height: 55px;
+}
+
+.expense-overview-window:hover .expense-delete-button {
+  font-size: 18px;
+  display: inline-block;
+  background-color: rgb(243, 243, 243);
+}
+
+.expense-overview-window:hover {
+  background-color: rgb(243, 243, 243);
+}
+
+.expense-overview-window:hover .expenseIndex-desription{
+  text-decoration: underline;
+}
+
+.expense-delete-button:hover {
+  text-decoration: underline;
+  background-color: rgb(243, 243, 243);
+}
 
 
 
