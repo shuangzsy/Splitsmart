@@ -8,7 +8,7 @@ class Api::ExpensesController < ApplicationController
   end
 
   def create
-    total_amount = expense_params[:total_amount].to_f   #* 100
+    total_amount = ('%.2f' % expense_params[:total_amount]).to_f #* 100
     split_params = params[:splits].to_unsafe_h
     # debugger
 
@@ -20,7 +20,7 @@ class Api::ExpensesController < ApplicationController
         @expense.save!
         @splits = split_params.to_a.map do |split|
           user = User.find_by(email: split[0])
-          split_amount = total_amount * split[1].to_f
+          split_amount = total_amount * split[1].to_f.round(2)
           Split.create!(
             expense_id: @expense.id,
             user_id: user.id, 

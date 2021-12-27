@@ -29,14 +29,17 @@ const ExpenseIndexItem = ({ expense, deleteExpense }) => {
           </div>
           <div className="payer-info">
             <span className='payer-user-info'>{expense.payer} paid </span>
-            <span><strong>${Math.abs(expense.totalAmount)}</strong></span>
+            <span><strong>${Math.abs(expense.totalAmount).toFixed(2)}</strong></span>
           </div>
           <div className="ower-info">
             <span className='ower-uer-info'>{expense.payer} lent </span>
             {expense.payer === "you" ?
-              <span><strong style={{ color: '#5bc5a7' }}>${Math.abs(expense.totalAmount)*0.5}</strong></span> :
-              <span><strong style={{ color: '#ff652f' }}>${Math.abs(expense.totalAmount) * 0.5}</strong></span>
+              <span><strong style={{ color: '#5bc5a7' }}>${(Math.abs(expense.totalAmount)*0.5).toFixed(2)}</strong></span> :
+              <span><strong style={{ color: '#ff652f' }}>${(Math.abs(expense.totalAmount) * 0.5).toFixed(2)}</strong></span>
             }
+          </div>
+          <div className='expense-delete-button-container'>
+            <button className='expense-delete-button' onClick={() => deleteExpense(expense.id)}>X</button>
           </div>
         </div>
 
@@ -47,16 +50,13 @@ const ExpenseIndexItem = ({ expense, deleteExpense }) => {
             </div>
             <div>
               <div className="expense-description">{expense.description}</div>
-              <div className="total-amount">${Math.abs(expense.totalAmount)}</div>
+              <div className="total-amount">${Math.abs(expense.totalAmount).toFixed(2)}</div>
               <div className="edit-by">Added by ... on {expense.createdAt}</div>
               <button className="edit-expense-button">Edit Expense</button >
             </div>
           </div>
           <hr />
           <div><ExpenseShowContainer expense={expense} /></div>
-          <div>       
-            <button onClick={() => deleteExpense(expense.id)}>Delete</button>
-          </div>
         </div>
       </>
   )
