@@ -15,6 +15,9 @@ class ExpenseForm extends React.Component {
     return e => {
       const expense = this.state.expense;
       expense[field] = e.target.value;
+      if (field === "payer" && e.target.value !== "you"){
+        expense["total_amount"] = -expense["total_amount"]
+      }
       this.setState({expense})
     }
   }
@@ -64,7 +67,11 @@ class ExpenseForm extends React.Component {
         </div>
 
         
-        <div className="human_summary">Paid by <a href="">you</a> and split <a href="">equally</a>
+        <div className="human_summary">
+          Paid by 
+          <input type="text" placeholder="you" value={this.state.expense.payer} onChange={this.updateExpense('payer')} /> 
+          and split 
+          <a href="">equally</a>
           <div className="details">($0.00/person)</div>
         </div>
 

@@ -18,14 +18,28 @@ const ExpenseIndexItem = ({ expense, deleteExpense }) => {
   let monthRef = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
   return (
       <>
-        <div className="expense-overview" onClick={clickToShow}>
-          <div className='expense-date'>
-            <span className='expense-date-month'>{monthRef[expense.createdAt.slice(5, 7) - 1]}</span>
-            <span className='expense-date-number'>{expense.createdAt.slice(8, 10)}</span>
+        <div className='expense-overview-window'>
+          <div className="expense-overview" onClick={clickToShow}>
+            <div className='expense-date'>
+              <span className='expense-date-month'>{monthRef[expense.createdAt.slice(5, 7) - 1]}</span>
+              <span className='expense-date-number'>{expense.createdAt.slice(8, 10)}</span>
+            </div>
+            <div><img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638476337/Screen_Shot_2021-12-02_at_12.17.59_PM_mk8tvd.png" alt="" /></div>
+            <div className="expenseIndex-desription">{expense.description}</div>
           </div>
-          <div><img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638476337/Screen_Shot_2021-12-02_at_12.17.59_PM_mk8tvd.png" alt="" /></div>
-          <div className="expenseIndex-desription">{expense.description}</div>
+          <div className="payer-info">
+            <span className='payer-user-info'>{expense.payer} paid </span>
+            <span><strong>${Math.abs(expense.totalAmount)}</strong></span>
+          </div>
+          <div className="ower-info">
+            <span className='ower-uer-info'>{expense.payer} lent </span>
+            {expense.payer === "you" ?
+              <span><strong style={{ color: '#5bc5a7' }}>${Math.abs(expense.totalAmount)*0.5}</strong></span> :
+              <span><strong style={{ color: '#ff652f' }}>${Math.abs(expense.totalAmount) * 0.5}</strong></span>
+            }
+          </div>
         </div>
+
         <div id={expense.id} className="all-expense-item-details">
           <div className="expense-info">
             <div>
@@ -33,7 +47,7 @@ const ExpenseIndexItem = ({ expense, deleteExpense }) => {
             </div>
             <div>
               <div className="expense-description">{expense.description}</div>
-              <div className="total-amount">${expense.totalAmount}</div>
+              <div className="total-amount">${Math.abs(expense.totalAmount)}</div>
               <div className="edit-by">Added by ... on {expense.createdAt}</div>
               <button className="edit-expense-button">Edit Expense</button >
             </div>

@@ -68,6 +68,7 @@ class Api::ExpensesController < ApplicationController
       :total_amount, 
       :creator_id, 
       :group_name, 
+      :payer,
       :settled
     )
   end
