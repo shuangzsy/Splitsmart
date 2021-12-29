@@ -3,18 +3,21 @@
   width: 350px;
   height: 512px;
   justify-content: flex-end;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 .left_side_bar_list{
   width:60%;
   display: flex;
   flex-direction: column;
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 .left_side_bar_list  li {
   text-align: left;
   width: 96%;
   padding: 3px 8px 5px 5px;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 .left_side_bar{
@@ -28,6 +31,7 @@
   position: relative;
   // z-index: 50;
   justify-items: right;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 
@@ -43,52 +47,61 @@
   border-bottom: 1px solid #eee;
   text-transform: uppercase;
   width: 300px;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 
 .dashboard a {
   font-size: 16px;
   color: #999;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   }
 
 .dashboard a:hover {
   font-size: 16px;
   color: #5bc5a7;
   font-weight: bold;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
  }
 
 
 .activity {
   width: 153px;
   height: 19px;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 .activity a{
   font-size: 16px;
   color: #999;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   }
 
 .activity-list:hover {
   font-size: 16px;
   color: #5bc5a7;
   font-weight: bold;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 .all {
   width: 153px;
   height: 19px;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 .all-expense-list:hover {
   font-size: 16px;
   color: #5bc5a7;
   font-weight: bold;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
  .all-expense-list{
     font-size: 16px;
     color: #999;
     // font-weight: bold;
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   }
   .left_side_bar_list > li:hover{
     background-color: lightgrey;
