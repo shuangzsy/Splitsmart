@@ -1,0 +1,57 @@
+.split-show-details-owe-you {
+  display: flex;
+  flex-direction: row;
+  padding: 7px 13px 7px 13px;
+}
+
+.split-show-details-owe-you span{
+  font-size:13px;
+  font-weight: normal !important;
+}
+
+.split-show-details-owe-you-info{
+  color: #5bc5a7;
+  font-size: 15px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
+.split-show-details-owe-you-user{
+  color: black;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.split-show-details-owe-you:hover {
+  background-color: rgb(238, 238, 238);
+}
+
+//you owe---
+
+.split-show-details-you-owe {
+  display: flex;
+  flex-direction: row;
+  padding: 7px 13px 7px 13px;
+}
+
+.split-show-details-you-owe span{
+  font-size:13px;
+  font-weight: normal !important;
+}
+
+.split-show-details-you-owe-info{
+  color:#ff652f;
+  font-size: 15px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
+.split-show-details-you-owe-user{
+  color: black;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.split-show-details-you-owe:hover {
+  background-color: rgb(238, 238, 238);
+}
