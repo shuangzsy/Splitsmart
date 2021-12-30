@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom';
 import DashboardNav from '../dashborad_nav';
 import LeftNav from '../nav/left_side_bar';
 import CenterNav from '../nav/center_bar';
-import { openModal } from '../../actions/modal_actions';
 import Modal from '../modal';
 
 class ExpenseIndex extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
+
 
   componentDidMount() {
     this.props.requestExpenses();
   }
 
   render() {
-    const { expenses, deleteExpense } = this.props;
+    const { expenses, deleteExpense, editExpense } = this.props;
     return (
       <div>
         <Modal />
@@ -28,11 +28,11 @@ class ExpenseIndex extends React.Component {
           <div className="all-expenses">
             <div className="top_bar">
               <h1>All expenses</h1>
-              {this.props.AddExpense}
+              {this.props.addExpense}
             </div>
             <ul>
               {
-                expenses.map(expense => <ExpenseIndexItem key={expense.id} expense={expense} deleteExpense={deleteExpense} />)
+                expenses.map(expense => <ExpenseIndexItem key={expense.id} expense={expense} deleteExpense={deleteExpense} editExpense={editExpense} />)
               }
             </ul>
           </div>

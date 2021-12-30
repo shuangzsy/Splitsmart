@@ -15,10 +15,15 @@ const mDTP = (dispatch) => ({
   UserLogout: () => dispatch(logout()),
   requestExpenses: () => dispatch(requestExpenses()),
   deleteExpense: expenseId => dispatch(deleteExpense(expenseId)),
-  AddExpense: (
+  addExpense: (
     <button onClick={() => dispatch(openModal('addexpense'))}>
       Add an expense
+    </button>),
+  editExpense: (
+    <button className="edit-expense-button" onClick={() => dispatch(openModal('editexpense'))}>
+      Edit Expense
     </button>)
+  
 })
 
 export default connect(mSTP, mDTP)(ExpenseIndex);

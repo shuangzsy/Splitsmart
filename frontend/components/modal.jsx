@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreateExpenseFormContainer from './expense/create_expense_form_container';
+import EditExpenseFormContianer from './expense/edit_expense_form_container';
 
 
 function Modal({ modal, closeModal }) {
@@ -12,6 +13,9 @@ function Modal({ modal, closeModal }) {
   switch (modal) {
     case 'addexpense':
       component = <CreateExpenseFormContainer />;
+      break;
+    case 'editexpense':
+      component = <EditExpenseFormContianer />;
       break;
     default:
       return null;

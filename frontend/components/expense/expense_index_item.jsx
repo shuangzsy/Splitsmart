@@ -1,25 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ExpenseShowContainer from './expense_show_container';
+import Modal from '../modal';
+import EditExpenseFormContainer from './edit_expense_form_container';
 
 
+class ExpenseIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      toggle: false,
+    }
+    this.toggleModal = this.toggleModal.bind(this);
+    this.clickToShow = this.clickToShow.bind(this);
+  }
 
-const ExpenseIndexItem = ({ expense, deleteExpense }) => {
-  function clickToShow() {
-    const expenseItem = document.getElementById(`${expense.id}`);
-    console.log(expenseItem.style.display)
-    if (expenseItem.style.display === "none" || expenseItem.style.display === ""){
-      expenseItem.style.display = "block"
-    }else {
-      expenseItem.style.display = "none"
+  toggleModal() {
+    this.setState({ toggle: !this.state.toggle })
+  }
+
+  clickToShow() {
+    if (this.props.expense){
+      const expenseItem = document.getElementById(`${this.props.expense.id}`);
+      if (expenseItem.style.display === "none" || expenseItem.style.display === ""){
+        expenseItem.style.display = "block"
+      }else {
+        expenseItem.style.display = "none"
+      }
     }
   }
 
-  let monthRef = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+  render(){
+    if (!this.props.expense) return "loading";
+    let monthRef = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+    let {expense, deleteExpense} = this.props;
   return (
       <>
         <div className='expense-overview-window'>
-          <div className="expense-overview" onClick={clickToShow}>
+          <div className="expense-overview" onClick={this.clickToShow}>
             <div className='expense-date'>
               <span className='expense-date-month'>{monthRef[expense.createdAt.slice(5, 7) - 1]}</span>
               <span className='expense-date-number'>{expense.createdAt.slice(8, 10)}</span>
@@ -52,7 +70,12 @@ const ExpenseIndexItem = ({ expense, deleteExpense }) => {
               <div className="expense-description">{expense.description}</div>
               <div className="total-amount">${Math.abs(expense.totalAmount).toFixed(2)}</div>
               <div className="edit-by">Added by ... on {expense.createdAt}</div>
-              <button className="edit-expense-button">Edit Expense</button >
+              {/* <button className="edit-expense-button">Edit Expense</button > */}
+            <button className="edit-expense-button" onClick={() => this.toggleModal()}>
+              Edit Expense
+            </button>
+            <div style={this.state.toggle ? { display: "block" } : { display: "none" }}
+              className="modal-background" onClick={() => this.toggleModal()} ><EditExpenseFormContainer expenseId={expense.id}/></div>
             </div>
           </div>
           <hr />
@@ -60,6 +83,7 @@ const ExpenseIndexItem = ({ expense, deleteExpense }) => {
         </div>
       </>
   )
-}
+}}
+
 
 export default ExpenseIndexItem;
