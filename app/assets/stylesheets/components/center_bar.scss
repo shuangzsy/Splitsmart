@@ -108,3 +108,25 @@
   margin-right: 8px;
   font-weight: bold;
 }
+
+.positive {
+  color: #5bc5a7;
+  display: inline-block;
+  text-align: center;
+  padding: 0 5px;
+  line-height: 16px;
+  font-size: 13px;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  text-rendering: optimizeLegibility;
+}
+
+.negative {
+  color: #ff652f;
+  display: inline-block;
+  text-align: center;
+  padding: 0 5px;
+  line-height: 16px;
+  font-size: 13px;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  text-rendering: optimizeLegibility;
+}

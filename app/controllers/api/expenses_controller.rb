@@ -10,7 +10,6 @@ class Api::ExpensesController < ApplicationController
   def create
     total_amount = ('%.2f' % expense_params[:total_amount]).to_f #* 100
     split_params = params[:splits].to_unsafe_h
-    # debugger
 
     begin
       Expense.transaction do 

@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { requestExpenses, deleteExpense } from '../../actions/expense_action';
 import ExpenseIndex from './expense_index';
+import { openModal } from '../../actions/modal_actions';
+import React from 'react';
 
 
 const mSTP = (state) => ({
@@ -12,7 +14,11 @@ const mSTP = (state) => ({
 const mDTP = (dispatch) => ({
   UserLogout: () => dispatch(logout()),
   requestExpenses: () => dispatch(requestExpenses()),
-  deleteExpense: expenseId => dispatch(deleteExpense(expenseId))
+  deleteExpense: expenseId => dispatch(deleteExpense(expenseId)),
+  AddExpense: (
+    <button onClick={() => dispatch(openModal('addexpense'))}>
+      Add an expense
+    </button>)
 })
 
 export default connect(mSTP, mDTP)(ExpenseIndex);

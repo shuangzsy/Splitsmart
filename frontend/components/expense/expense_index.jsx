@@ -5,7 +5,7 @@ import DashboardNav from '../dashborad_nav';
 import LeftNav from '../nav/left_side_bar';
 import CenterNav from '../nav/center_bar';
 import { openModal } from '../../actions/modal_actions';
-import Modal from '../modal'
+import Modal from '../modal';
 
 class ExpenseIndex extends React.Component {
   constructor(props) {
@@ -28,9 +28,7 @@ class ExpenseIndex extends React.Component {
           <div className="all-expenses">
             <div className="top_bar">
               <h1>All expenses</h1>
-              <button onClick={() => dispatch(openModal('addexpense'))}>
-                Add an expense
-              </button>
+              {this.props.AddExpense}
             </div>
             <ul>
               {

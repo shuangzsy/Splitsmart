@@ -32,7 +32,6 @@ class ExpenseForm extends React.Component {
     e.preventDefault();
     let stateCopy = Object.assign({}, this.state);
     stateCopy.splits = Object.fromEntries(stateCopy.splits);
-    // debugger
     this.props.submitExpense(stateCopy.expense, stateCopy.splits).then(this.props.closeModal);
     this.props.history.push('/dashboard');
   }
