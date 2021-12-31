@@ -14,9 +14,9 @@ export const receiveFriend = friend => ({
   friend
 })
 
-export const removeFriend = friend => ({
+export const removeFriend = friendId => ({
   type: REMOVE_FRIEND,
-  friend
+  friendId
 })
 
 
@@ -26,24 +26,18 @@ export const requestFriends = () => (dispatch) => (
   )
 );
 
-export const requestExpense = (expenseId) => (dispatch) => (
-  ExpenseAPIUtil.getExpense(expenseId).then(
-    (payload) => { dispatch(receiveExpense(payload)) }
+export const requestFriend = (friendId) => (dispatch) => (
+  FriendAPIUtil.getFriend(friendId).then(
+    (friend) => { dispatch(receiveFriend(friend)) }
   )
 );
 
-export const createExpense = (expense, splits) => (dispatch) => (
-  ExpenseAPIUtil.createExpense(expense, splits).then((payload) => {
-    dispatch(receiveExpense(payload))
+export const createFriend = (friend) => (dispatch) => (
+  FriendAPIUtil.createFriend(friend).then((friend) => {
+    dispatch(receiveFriend(friend))
   })
 );
 
-export const updateExpense = (expense, splits) => (dispatch) => (
-  ExpenseAPIUtil.updateExpense(expense, splits).then((payload) => {
-    dispatch(receiveExpense(payload))
-  })
-);
-
-export const deleteExpense = (expenseId) => (dispatch) => (
-  ExpenseAPIUtil.deleteExpense(expenseId).then(({ expense }) => dispatch(removeExpense(expense.id)))
+export const deleteFriend = (friendId) => (dispatch) => (
+  FriendAPIUtil.deleteFriend(friendId).then((friend) => dispatch(removeExpense(friend.id)))
 );
