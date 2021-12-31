@@ -3,6 +3,7 @@ import { requestExpenses, deleteExpense } from '../../actions/expense_action';
 import ExpenseIndex from './expense_index';
 import { openModal } from '../../actions/modal_actions';
 import React from 'react';
+import { logout } from '../../actions/session_actions';
 
 
 const mSTP = (state) => ({

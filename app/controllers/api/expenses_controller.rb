@@ -44,6 +44,21 @@ class Api::ExpensesController < ApplicationController
 
   def update
     @expense = Expense.find(params[:id])
+    splits = Split.where(expense_id: @expense.id)
+    total_amount = ('%.2f' % expense_params[:total_amount]).to_f #* 100
+    split_params = params[:splits].to_unsafe_h.to_a
+
+    @splits = splits.each_with_index.map {|split, index|
+      user = User.find_by(email: split_params[index][0])
+      split_amount = total_amount * split_params[index][1].to_f.round(2)
+      split.update!(
+        expense_id: @expense.id,
+        user_id: user.id, 
+        owe_amount: split_amount
+      )
+    }
+
+    # debugger
     if @expense.creator_id == current_user.id && @expense.update(expense_params)
       render :show
     else

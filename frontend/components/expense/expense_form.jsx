@@ -12,12 +12,13 @@ class ExpenseForm extends React.Component {
   }
   
   updateExpense(field) {
+    // debugger;
     return e => {
       const expense = this.state.expense;
       expense[field] = e.target.value;
-      if (field === "payer" && e.target.value !== "you"){
-        expense["total_amount"] = -expense["total_amount"]
-      }
+      // if (field === "payer" && e.target.value === "you"){
+      //   expense["total_amount"] = -expense["total_amount"]
+      // }
       this.setState({expense})
     }
   }
@@ -32,13 +33,24 @@ class ExpenseForm extends React.Component {
     e.preventDefault();
     let stateCopy = Object.assign({}, this.state);
     stateCopy.splits = Object.fromEntries(stateCopy.splits);
+
+    if (stateCopy.expense.payer === "you"){
+      stateCopy.splits[this.props.currentUserEmail] = -stateCopy.splits[this.props.currentUserEmail]}
+    else {
+      stateCopy.splits[stateCopy.expense.payer] = -stateCopy.splits[stateCopy.expense.payer]
+    }
+    
+    debugger;
     this.props.submitExpense(stateCopy.expense, stateCopy.splits).then(this.props.closeModal);
-    this.props.history.push('/dashboard');
+    
+    if (this.props.formType === "Add an expense")
+    {this.props.history.push('/dashboard');}
   }
 
 
 
   render(){
+    // debugger;
     return (
       <div className='modal-child' onClick={e => e.stopPropagation()}>
         <form className = "expense_form" onSubmit = {this.handleSubmit}>
@@ -60,25 +72,24 @@ class ExpenseForm extends React.Component {
               <input type="text" placeholder="Enter a description" value={this.state.expense.description} onChange={this.updateExpense('description')} />
               <div>
                 <span className="currency_code">$</span>
-                <input type="text" placeholder="0.00" value={this.state.expense.totalAmount} onChange={this.updateExpense('total_amount')} />
+                <input type="text" placeholder="0.00" value={this.state.expense.total_amount} onChange={this.updateExpense('total_amount')} />
               </div>
             </div>
           </div>
           
-
           
           <div className="human_summary">
             Paid by 
             <input type="text" placeholder="you" value={this.state.expense.payer} onChange={this.updateExpense('payer')} /> 
             and split 
-            <a href="">equally</a>
+            <a href=""> equally</a>
             <div className="details">($0.00/person)</div>
           </div>
 
           {/* <label htmlFor="">Settled</label>
           <input type="text" value={this.state.expense.settled} onChange={this.updateExpense('settled')} /> */}
           <label htmlFor="">Group Name</label>
-          <input type="text" value={this.state.expense.groupName} onChange={this.updateExpense('group_name')} />
+          <input type="text" value={this.state.expense.group_name} onChange={this.updateExpense('group_name')} />
 
           <div className="expense-form-footer">
             <input className="submit-expense" type="submit" value={this.props.formType}/>

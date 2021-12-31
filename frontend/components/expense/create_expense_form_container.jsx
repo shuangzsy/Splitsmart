@@ -12,8 +12,9 @@ const mSTP = state => ({
     settled: false,
     group_name:''
   },
-  splits: [[state.session.currentUser.email, -0.5],['',0.5]],
-  formType: "Add an expense"
+  splits: [[state.session.currentUser.email, 0.5],['',0.5]],
+  formType: "Add an expense",
+  currentUserEmail: state.session.currentUser.email
 })
 
 const mDTP = dispatch => ({

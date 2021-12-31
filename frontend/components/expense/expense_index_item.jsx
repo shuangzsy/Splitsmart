@@ -33,7 +33,19 @@ class ExpenseIndexItem extends React.Component {
   render(){
     if (!this.props.expense) return "loading";
     let monthRef = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
-    let {expense, deleteExpense} = this.props;
+    let {expense, splits, deleteExpense} = this.props;
+
+    let payerUsername = "you";
+    // debugger;
+    if (expense && splits && expense.payer !== "you"){
+      expense.splitIds.map(splitId => {
+        splits.map(split => {
+          if (split.id === splitId && split.email === expense.payer){
+            payerUsername = split.username
+          }
+        })
+      })
+    }
   return (
       <>
         <div className='expense-overview-window'>
@@ -46,11 +58,11 @@ class ExpenseIndexItem extends React.Component {
             <div className="expenseIndex-desription">{expense.description}</div>
           </div>
           <div className="payer-info">
-            <span className='payer-user-info'>{expense.payer} paid </span>
+          <span className='payer-user-info'>{payerUsername} paid </span>
             <span><strong>${Math.abs(expense.totalAmount).toFixed(2)}</strong></span>
           </div>
           <div className="ower-info">
-            <span className='ower-uer-info'>{expense.payer} lent </span>
+          <span className='ower-uer-info'>{payerUsername} lent </span>
             {expense.payer === "you" ?
               <span><strong style={{ color: '#5bc5a7' }}>${(Math.abs(expense.totalAmount)*0.5).toFixed(2)}</strong></span> :
               <span><strong style={{ color: '#ff652f' }}>${(Math.abs(expense.totalAmount) * 0.5).toFixed(2)}</strong></span>
