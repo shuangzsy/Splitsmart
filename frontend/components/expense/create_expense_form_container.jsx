@@ -20,7 +20,6 @@ const mSTP = state => ({
 const mDTP = dispatch => ({
   
   submitExpense: (expense, splits) => dispatch(createExpense(expense, splits)),
-  // submitExpense: ({ expense, splits }) => dispatch(createExpense({ expense, splits })),
   closeModal: () => dispatch(closeModal()),
 })
 

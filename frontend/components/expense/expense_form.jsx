@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class ExpenseForm extends React.Component {
   constructor(props){
@@ -40,11 +41,18 @@ class ExpenseForm extends React.Component {
       stateCopy.splits[stateCopy.expense.payer] = -stateCopy.splits[stateCopy.expense.payer]
     }
     
-    debugger;
-    this.props.submitExpense(stateCopy.expense, stateCopy.splits).then(this.props.closeModal);
-    
     if (this.props.formType === "Add an expense")
-    {this.props.history.push('/dashboard');}
+      {this.props.submitExpense(stateCopy.expense, stateCopy.splits).then(this.props.closeModal);}
+    else{
+      this.props.submitExpense(stateCopy.expense, stateCopy.splits);
+    }
+    
+    //redirect the page
+    if (this.props.formType === "Add an expense")
+      {this.props.history.push('/dashboard');}
+    else {
+      this.props.history.push('/dashboard');
+    }
   }
 
 
@@ -95,7 +103,6 @@ class ExpenseForm extends React.Component {
             <input className="submit-expense" type="submit" value={this.props.formType}/>
             <button onClick={this.props.closeModal} className="cancel-create">Cancel</button>
           </div>
-
         </form>
       </div>
       
@@ -103,4 +110,4 @@ class ExpenseForm extends React.Component {
   }
 }
 
-export default ExpenseForm;
+export default withRouter(ExpenseForm);
