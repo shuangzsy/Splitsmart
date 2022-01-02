@@ -4,9 +4,9 @@ import React from 'react';
 const FriendIndexItem = ({ friend, deleteFriend }) => {
   return (
     <li>
-      <div>Friends</div>
-      <div>{friend.friend_email}</div>
-      <button onClick={() => deleteFriend(friend.id)}></button>
+      <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638645241/profile-icon-png-898_3_ofszd1.png" alt="" />
+      <span>{friend.friendEmail.substring(0, friend.friendEmail.lastIndexOf("@"))}</span>
+      <button onClick={() => deleteFriend(friend.id)}>X</button>
     </li> 
   )
 }

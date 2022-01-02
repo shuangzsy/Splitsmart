@@ -15,6 +15,7 @@ class FriendIndex extends React.Component {
     const { friends, deleteFriend } = this.props;
     return (
       <div>
+        {/* <div>All friends</div> */}
         <ul>
           {
             friends.map(friend => <FriendIndexItem key={friend.id} friend={friend} deleteFriend={deleteFriend} />)

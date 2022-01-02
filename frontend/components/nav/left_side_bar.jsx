@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FriendIndexContainer from '../friends/friend_index_container';
 
 class LeftNav extends React.Component {
   constructor(props) {
@@ -67,6 +68,7 @@ class LeftNav extends React.Component {
                   })
                 }
               </ul>
+            <div><FriendIndexContainer/></div>
           </li>
         </ul>
       </div>
