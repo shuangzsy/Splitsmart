@@ -20,7 +20,7 @@ class SplitIndex extends React.Component {
           <div className ="owe-you-details">
             { 
               oweYou.map(split => {
-                return <SplitIndexItem 
+                return <SplitIndexItem
                 key={split.id} 
                 split={split} 
                 currentUser = {currentUser}

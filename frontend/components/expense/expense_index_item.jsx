@@ -87,7 +87,7 @@ class ExpenseIndexItem extends React.Component {
               Edit Expense
             </button>
             <div style={this.state.toggle ? { display: "block" } : { display: "none" }}
-              className="modal-background" onClick={() => this.toggleModal()} ><EditExpenseFormContainer expenseId={expense.id}/></div>
+              className="modal-background" onClick={() => this.toggleModal()} ><EditExpenseFormContainer key={expense.id} expenseId={expense.id}/></div>
             </div>
           </div>
           <hr />

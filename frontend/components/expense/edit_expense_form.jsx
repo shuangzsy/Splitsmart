@@ -24,6 +24,7 @@ class EditExpenseForm extends React.Component {
 
     return (
       <ExpenseForm
+        key={copyExpense.id}
         expense={copyExpense}
         splits={splits}
         formType={formType}
