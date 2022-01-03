@@ -21,7 +21,6 @@ class FriendIndex extends React.Component {
             friends.map(friend => <FriendIndexItem key={friend.id} friend={friend} deleteFriend={deleteFriend} />)
           }
         </ul>
-        <Link to="/friends/new">Add Friend</Link>
       </div>
     )
   }
