@@ -9,7 +9,7 @@ class EditExpenseForm extends React.Component {
   }
 
   render() {
-    const { expense, splits, formType, submitExpense, currentUserEmail } = this.props;
+    const { expense, splits, formType, submitExpense, currentUserEmail, allSplits, allExpenses, currentUser } = this.props;
     // debugger;
     if (!expense) return null;
     let copyExpense = {};
@@ -29,7 +29,10 @@ class EditExpenseForm extends React.Component {
         splits={splits}
         formType={formType}
         submitExpense={submitExpense}
-        currentUserEmail={currentUserEmail} />
+        currentUserEmail={currentUserEmail}
+        allSplits={allSplits}
+        allExpenses={allExpenses}
+        currentUser={currentUser} />
     );
   }
 }

@@ -13,8 +13,11 @@ const mSTP = state => ({
     group_name:''
   },
   splits: [[state.session.currentUser.email, 0.5],['',0.5]],
+  allSplits: Object.values(state.entities.splits),
+  allExpenses: Object.values(state.entities.expenses),
   formType: "Add an expense",
-  currentUserEmail: state.session.currentUser.email
+  currentUserEmail: state.session.currentUser.email,
+  currentUser: state.session.currentUser
 })
 
 const mDTP = dispatch => ({

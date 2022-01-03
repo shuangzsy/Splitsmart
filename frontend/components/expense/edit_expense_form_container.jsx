@@ -19,7 +19,10 @@ const mSTP = (state, ownProps) => {
     expense: currentExpense,
     splits: [[state.session.currentUser.email, 0.5], [splitPartner, 0.5]],
     formType: "Edit the expense",
-    currentUserEmail: state.session.currentUser.email
+    currentUserEmail: state.session.currentUser.email,
+    allSplits: Object.values(state.entities.splits),
+    allExpenses: Object.values(state.entities.expenses),
+    currentUser: state.session.currentUser
 }}
 
 const mDTP = dispatch => ({

@@ -10,6 +10,15 @@ class ExpenseForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateSplit = this.updateSplit.bind(this);
+    this.isArrayInArray = this.isArrayInArray.bind(this);
+  }
+
+  isArrayInArray(arr, item) {
+    let item_as_string = JSON.stringify(item);
+    let contains = arr.some(function (ele) {
+      return JSON.stringify(ele) === item_as_string;
+    });
+    return contains;
   }
   
   updateExpense(field) {
@@ -41,6 +50,7 @@ class ExpenseForm extends React.Component {
       stateCopy.splits[stateCopy.expense.payer] = -stateCopy.splits[stateCopy.expense.payer]
     }
     
+    debugger;
     if (this.props.formType === "Add an expense")
       {this.props.submitExpense(stateCopy.expense, stateCopy.splits).then(this.props.closeModal);}
     else{
@@ -58,7 +68,24 @@ class ExpenseForm extends React.Component {
 
 
   render(){
-    // debugger;
+    let { allSplits, allExpenses, currentUser } = this.props;
+    let uniqueFriend = [];
+    let uniqueGroup = [];
+    if (!this.props.allSplits) return "loading data...";
+    if (this.props.allSplits){
+      let splitFriend = allSplits.filter(split => split.email !== currentUser.email);
+      splitFriend.map(split => {
+        if (!this.isArrayInArray(uniqueFriend, [split.email, split.username])) {
+          uniqueFriend.push([split.email, split.username])
+        }
+      })
+      debugger;
+      // allExpenses.map(expense => {
+      //   if (!uniqueGroup.includes(expense.groupName)) {
+      //     uniqueGroup.push(expense.groupName)
+      //   }
+      // })
+    }
     return (
       <div className='modal-child' onClick={e => e.stopPropagation()}>
         <form className = "expense_form" onSubmit = {this.handleSubmit}>
@@ -69,7 +96,19 @@ class ExpenseForm extends React.Component {
           
           <div className="with_field">
             <span> With <strong>you</strong> and: </span>
-            <input type="text" value={this.state.splits[1][0]} onChange={this.updateSplit} />
+            {/* <input type="text" value={this.state.splits[1][0]} onChange={this.updateSplit} /> */}
+            <select className='split-with-selector' value={this.state.splits[1][0]} onChange={this.updateSplit}>
+              {/* {allSplits.map((split) => {
+                debugger;
+                return
+                (<option key={split.id} value={split.email}>{split.username}</option>)
+            })} */}
+              {uniqueFriend.map((friend) => {
+                // debugger;
+                return
+                (<option key={friend[0]} value={friend[0]}>{friend[1]}</option>)
+              })}
+            </select>
           </div>
 
           <div className="input_field">
