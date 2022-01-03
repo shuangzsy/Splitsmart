@@ -70,9 +70,10 @@ class ExpenseForm extends React.Component {
   render(){
     let { allSplits, allExpenses, currentUser } = this.props;
     let allSplitsCopy = [...allSplits];
-    let uniqueFriendEmail = [];
+    let uniqueFriendEmail = [currentUser.email];
     let uniqueGroup = [];
     if (!this.props.allSplits) return "loading data...";
+    // allSplits = allSplits.filter(split => split.email !== currentUser.email);
 
     return (
       <div className='modal-child' onClick={e => e.stopPropagation()}>
@@ -86,10 +87,12 @@ class ExpenseForm extends React.Component {
             <span> With <strong>you</strong> and: </span>
             {/* <input type="text" value={this.state.splits[1][0]} onChange={this.updateSplit} /> */}
             <select className='split-with-selector' value={this.state.splits[1][0]} onChange={this.updateSplit}>
-              {this.props.allSplits.map((split) => {
+              <option>select a friend</option>
+              {allSplits.map((split) => {
                 if (!uniqueFriendEmail.includes(split.email))
                 {
                   uniqueFriendEmail.push(split.email)
+                  // debugger;
                   return(
                     <option key={split.id} value={split.email}>{split.username}</option>)}
                 }
