@@ -69,23 +69,11 @@ class ExpenseForm extends React.Component {
 
   render(){
     let { allSplits, allExpenses, currentUser } = this.props;
-    let uniqueFriend = [];
+    let allSplitsCopy = [...allSplits];
+    let uniqueFriendEmail = [];
     let uniqueGroup = [];
     if (!this.props.allSplits) return "loading data...";
-    if (this.props.allSplits){
-      let splitFriend = allSplits.filter(split => split.email !== currentUser.email);
-      splitFriend.map(split => {
-        if (!this.isArrayInArray(uniqueFriend, [split.email, split.username])) {
-          uniqueFriend.push([split.email, split.username])
-        }
-      })
-      debugger;
-      // allExpenses.map(expense => {
-      //   if (!uniqueGroup.includes(expense.groupName)) {
-      //     uniqueGroup.push(expense.groupName)
-      //   }
-      // })
-    }
+
     return (
       <div className='modal-child' onClick={e => e.stopPropagation()}>
         <form className = "expense_form" onSubmit = {this.handleSubmit}>
@@ -98,16 +86,14 @@ class ExpenseForm extends React.Component {
             <span> With <strong>you</strong> and: </span>
             {/* <input type="text" value={this.state.splits[1][0]} onChange={this.updateSplit} /> */}
             <select className='split-with-selector' value={this.state.splits[1][0]} onChange={this.updateSplit}>
-              {/* {allSplits.map((split) => {
-                debugger;
-                return
-                (<option key={split.id} value={split.email}>{split.username}</option>)
-            })} */}
-              {uniqueFriend.map((friend) => {
-                // debugger;
-                return
-                (<option key={friend[0]} value={friend[0]}>{friend[1]}</option>)
-              })}
+              {this.props.allSplits.map((split) => {
+                if (!uniqueFriendEmail.includes(split.email))
+                {
+                  uniqueFriendEmail.push(split.email)
+                  return(
+                    <option key={split.id} value={split.email}>{split.username}</option>)}
+                }
+              )}
             </select>
           </div>
 
@@ -145,8 +131,8 @@ class ExpenseForm extends React.Component {
         </form>
       </div>
       
-    )
-  }
+      )
+    }
 }
 
 export default withRouter(ExpenseForm);
