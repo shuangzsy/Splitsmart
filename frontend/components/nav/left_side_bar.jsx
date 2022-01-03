@@ -71,7 +71,7 @@ class LeftNav extends React.Component {
               </ul>
             <div><FriendIndexContainer/></div>
           </li>
-          <li>
+          <li className='invite-friend-container-li'>
             <div><CreateFriendContainer/></div>
           </li>
         </ul>
