@@ -68,7 +68,7 @@ class ExpenseForm extends React.Component {
 
 
   render(){
-    let { allSplits, allExpenses, currentUser } = this.props;
+    let { allSplits, allExpenses, currentUser, friends } = this.props;
     let uniqueFriendEmail = [currentUser.email];
     let uniqueGroup = [];
     allExpenses.map(expense => {
@@ -76,6 +76,16 @@ class ExpenseForm extends React.Component {
         uniqueGroup.push(expense.groupName)
       }
     })
+
+    let friendEmailList = [];
+    allSplits.map(split => {
+      friendEmailList.push(split.email)
+    })
+
+    friends.map(friend => {
+      friendEmailList.push(friend.friendEmail)
+    })
+
 
     if (!this.props.allSplits) return "loading data...";
 
@@ -92,12 +102,12 @@ class ExpenseForm extends React.Component {
             {/* <input type="text" value={this.state.splits[1][0]} onChange={this.updateSplit} /> */}
             <select className='split-with-selector' value={this.state.splits[1][0]} onChange={this.updateSplit}>
               <option>select a friend</option>
-              {allSplits.map((split) => {
-                if (!uniqueFriendEmail.includes(split.email))
+              {friendEmailList.map((email) => {
+                if (!uniqueFriendEmail.includes(email))
                 {
-                  uniqueFriendEmail.push(split.email)
+                  uniqueFriendEmail.push(email)
                   return(
-                    <option key={split.id} value={split.email}>{split.email}</option>)}
+                    <option key={email} value={email}>{email}</option>)}
                 }
               )}
             </select>
@@ -137,7 +147,7 @@ class ExpenseForm extends React.Component {
           {/* <div>or</div> */}
           <div className='group-selector-container'>
             <select className='group-selector' value={this.state.expense.group_name} onChange={this.updateExpense('group_name')}>
-              <option>No group</option>
+              <option value="Non-group">No group</option>
               {uniqueGroup.map((group) => {
                 if (group !== ""){
                   return(

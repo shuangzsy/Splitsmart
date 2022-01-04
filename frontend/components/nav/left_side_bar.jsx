@@ -45,7 +45,7 @@ class LeftNav extends React.Component {
                 uniqueGroup.map(group => {
                   // if (length > 0)
                   return (
-                    <li>
+                    <li key={group}>
                       <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638648395/computer-icons-price-tag-tag-258a86a3764715cfe2ab536ca808aec6_1_gxw3g2.png" alt="" />
                       {group}
                     </li>
@@ -61,7 +61,7 @@ class LeftNav extends React.Component {
                 {
                   uniqueFriend.map(friend => {
                     return (
-                      <li>
+                      <li key={friend}>
                         <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638645241/profile-icon-png-898_3_ofszd1.png" alt="" />
                         {friend}
                       </li>

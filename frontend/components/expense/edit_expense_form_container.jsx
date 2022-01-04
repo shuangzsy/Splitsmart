@@ -22,7 +22,8 @@ const mSTP = (state, ownProps) => {
     currentUserEmail: state.session.currentUser.email,
     allSplits: Object.values(state.entities.splits),
     allExpenses: Object.values(state.entities.expenses),
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    friends: Object.values(state.entites.friends)
 }}
 
 const mDTP = dispatch => ({
