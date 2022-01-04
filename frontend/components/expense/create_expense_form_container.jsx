@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 const mSTP = state => ({
   expense: {
     description: '',
-    total_amount: 0,
+    total_amount: '',
     creator_id: state.entities.users.id,
     settled: false,
     group_name:''

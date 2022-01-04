@@ -51,11 +51,11 @@ class CenterNav extends React.Component {
                   </li>
                 <li>
                   <div>you owe </div> 
-                  <div className='negative'>${userOwe}</div>
+                  <div className='negative'>${userOwe.toFixed(2)}</div>
                 </li>
                 <li>
                   <div>you are owed </div>  
-                  <div className='positive'>${-userOwed}</div> 
+                  <div className='positive'>${-userOwed.toFixed(2)}</div> 
                 </li>
               </ul>
             </div>

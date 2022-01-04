@@ -196,5 +196,30 @@ hr {
   background-color: rgb(243, 243, 243);
 }
 
+.enter-desciption::-webkit-input-placeholder{
+   font-size: 20px;
+   color: rgb(231, 230, 230);
+   text-align: center;
+}
 
+.input_field {
+  padding: 10px;
 
+}
+
+.currency-code-item::-webkit-input-placeholder{
+  font-size: 23px;
+  color: rgb(231, 230, 230);
+}
+
+select{
+  border: 1px solid #bbb;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.group-selector-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

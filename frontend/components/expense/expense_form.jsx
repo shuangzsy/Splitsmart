@@ -69,11 +69,15 @@ class ExpenseForm extends React.Component {
 
   render(){
     let { allSplits, allExpenses, currentUser } = this.props;
-    let allSplitsCopy = [...allSplits];
     let uniqueFriendEmail = [currentUser.email];
     let uniqueGroup = [];
+    allExpenses.map(expense => {
+      if (!uniqueGroup.includes(expense.groupName)) {
+        uniqueGroup.push(expense.groupName)
+      }
+    })
+
     if (!this.props.allSplits) return "loading data...";
-    // allSplits = allSplits.filter(split => split.email !== currentUser.email);
 
     return (
       <div className='modal-child' onClick={e => e.stopPropagation()}>
@@ -92,9 +96,8 @@ class ExpenseForm extends React.Component {
                 if (!uniqueFriendEmail.includes(split.email))
                 {
                   uniqueFriendEmail.push(split.email)
-                  // debugger;
                   return(
-                    <option key={split.id} value={split.email}>{split.username}</option>)}
+                    <option key={split.id} value={split.email}>{split.email}</option>)}
                 }
               )}
             </select>
@@ -105,10 +108,10 @@ class ExpenseForm extends React.Component {
               <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638316661/Screen_Shot_2021-11-30_at_3.55.55_PM_m92jda.png" alt="" />
             </div>
             <div>
-              <input type="text" placeholder="Enter a description" value={this.state.expense.description} onChange={this.updateExpense('description')} />
+              <input className='enter-desciption' type="text" placeholder="Enter a description" value={this.state.expense.description} onChange={this.updateExpense('description')} />
               <div>
                 <span className="currency_code">$</span>
-                <input type="text" placeholder="0.00" value={this.state.expense.total_amount} onChange={this.updateExpense('total_amount')} />
+                <input className="currency-code-item" type="text" placeholder="0.00" value={this.state.expense.total_amount} onChange={this.updateExpense('total_amount')} />
               </div>
             </div>
           </div>
@@ -116,7 +119,12 @@ class ExpenseForm extends React.Component {
           
           <div className="human_summary">
             Paid by 
-            <input type="text" placeholder="you" value={this.state.expense.payer} onChange={this.updateExpense('payer')} /> 
+            {/* <input type="text" placeholder="you" value={this.state.expense.payer} onChange={this.updateExpense('payer')} />  */} 
+            <select className='group-selector' value={this.state.expense.payer} onChange={this.updateExpense('payer')}>
+              <option>...</option>
+              <option value="you">you</option>
+              <option value={this.state.splits[1][0]}>{this.state.splits[1][0]}</option>
+            </select>
             and split 
             <a href=""> equally</a>
             <div className="details">($0.00/person)</div>
@@ -124,12 +132,25 @@ class ExpenseForm extends React.Component {
 
           {/* <label htmlFor="">Settled</label>
           <input type="text" value={this.state.expense.settled} onChange={this.updateExpense('settled')} /> */}
-          <label htmlFor="">Group Name</label>
-          <input type="text" value={this.state.expense.group_name} onChange={this.updateExpense('group_name')} />
+          {/* <label htmlFor="">Group</label> */}
+          {/* <input type="text" placeholder='Enter a group' value={this.state.expense.group_name} onChange={this.updateExpense('group_name')} /> */}
+          {/* <div>or</div> */}
+          <div className='group-selector-container'>
+            <select className='group-selector' value={this.state.expense.group_name} onChange={this.updateExpense('group_name')}>
+              <option>No group</option>
+              {uniqueGroup.map((group) => {
+                if (group !== ""){
+                  return(
+                    <option value={group}>{group}</option>
+                  )}
+                })
+              }
+            </select>
+          </div>
 
           <div className="expense-form-footer">
-            <input className="submit-expense" type="submit" value={this.props.formType}/>
             <button onClick={this.props.closeModal} className="cancel-create">Cancel</button>
+            <input className="submit-expense" type="submit" value="Save"/>
           </div>
         </form>
       </div>

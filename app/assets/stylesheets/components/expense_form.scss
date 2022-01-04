@@ -1,5 +1,5 @@
 .expense_form {
-  min-height: 480px;
+  min-height: 380px;
   display: flex;
   flex-direction: column;
   width: 350px;
@@ -18,7 +18,7 @@
   border: none !important;
   box-shadow: none !important;
   text-align: left;
-  border-bottom: 1px dashed #ccc !important;
+  // border-bottom: 1px dashed #ccc !important;
 
 }
 
@@ -96,10 +96,9 @@
   border-bottom: 1px dashed #ccc !important;
 }
 
-  // ::-moz-placeholder { /* Firefox 19+ */
-  //   ;}
 
 .expense-form-footer{
+  padding-top: 10px;
   letter-spacing: 3px;
   border-top: 1px solid #eee;
   text-align: right;
@@ -107,19 +106,20 @@
 }
 
 .submit-expense{
-  background: #f6f6f6;
-  color: #333;
+  background: #5cc5a7;
+  color: #fff;
   padding: 9px 14px;
   font-size: 15px;
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   vertical-align: middle;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .cancel-create{
-  background: #5cc5a7;
-  color: #fff;
+  background: #f6f6f6;
+  color: #333;
   text-shadow: 0 -1px 0px #318a71;
   padding: 9px 14px;
   font-size: 15px;
@@ -127,6 +127,8 @@
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   vertical-align: middle;
   cursor: pointer;
+  margin-left: 5px;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
 }
 
 .currency_code {
@@ -140,7 +142,7 @@
   -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 0 0 12px rgba(0,0,0,0.2);
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
-  width: 45%;
+  width: 40%;
   height: 1000px;
   background-color: white;
 }
@@ -161,3 +163,14 @@
 
 }
 
+.group-selector{
+  width: 50%;
+}
+
+.enter-desciption {
+  padding-left: 5px;
+}
+
+.group-selector-container{
+  padding-bottom: 20px;
+}

@@ -39,5 +39,5 @@ export const createFriend = (friend) => (dispatch) => (
 );
 
 export const deleteFriend = (friendId) => (dispatch) => (
-  FriendAPIUtil.deleteFriend(friendId).then((friend) => dispatch(removeExpense(friend.id)))
+  FriendAPIUtil.deleteFriend(friendId).then((friend) => dispatch(removeFriend(friend.id)))
 );
