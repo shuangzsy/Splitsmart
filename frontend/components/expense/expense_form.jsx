@@ -101,8 +101,9 @@ class ExpenseForm extends React.Component {
             {/* <input type="text" value={this.state.splits[1][0]} onChange={this.updateSplit} /> */}
             <select className='split-with-selector' value={this.state.splits[1][0]} onChange={this.updateSplit}>
               <option>select a friend</option>
+              <option value="demofriend@demo.com">demofriend@demo.com</option>
               {friendEmailList.map((email) => {
-                if (!uniqueFriendEmail.includes(email))
+                if (!uniqueFriendEmail.includes(email) && email !=="demofriend@demo.com")
                 {
                   uniqueFriendEmail.push(email)
                   return(
