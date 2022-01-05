@@ -16,6 +16,14 @@ class ExpenseIndex extends React.Component {
     this.props.requestExpenses();
   }
 
+//  componentDidUpdate(prevProps){
+//    console.log("update")
+//    if (prevProps.currentUser.id !== this.props.currentUser.id){
+//      this.props.requestExpenses();
+//    }
+//   } 
+
+
   render() {
     const { expenses, deleteExpense, editExpense, splits } = this.props;
     return (

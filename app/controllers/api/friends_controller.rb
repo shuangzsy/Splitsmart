@@ -7,8 +7,9 @@ class Api::FriendsController < ApplicationController
 
   def create
     @friend = Friend.new(friend_params)
+    friend_user = User.find_by(email: friend_params[:friend_email])
     @friend.user_id = current_user.id
-    if @friend.save
+    if @friend.save && friend_user
       render :show, status: 200
     else
       render json: @friend.errors.full_messages, status: 400

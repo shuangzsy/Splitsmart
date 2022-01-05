@@ -1,5 +1,5 @@
 class Split < ApplicationRecord
-  validates :expense_id, :user_id, :owe_amount, presence: true
+  validates :expense_id, :owe_amount, presence: true
 
   belongs_to :expense,
   primary_key: :id,

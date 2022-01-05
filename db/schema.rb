@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_02_233734) do
+ActiveRecord::Schema.define(version: 2022_01_05_005057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2022_01_02_233734) do
 
   create_table "splits", force: :cascade do |t|
     t.integer "expense_id", null: false
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.float "owe_amount", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

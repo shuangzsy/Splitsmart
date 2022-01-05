@@ -50,7 +50,6 @@ class ExpenseForm extends React.Component {
       stateCopy.splits[stateCopy.expense.payer] = -stateCopy.splits[stateCopy.expense.payer]
     }
     
-    debugger;
     if (this.props.formType === "Add an expense")
       {this.props.submitExpense(stateCopy.expense, stateCopy.splits).then(this.props.closeModal);}
     else{

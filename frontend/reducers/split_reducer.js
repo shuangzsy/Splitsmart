@@ -1,7 +1,10 @@
 import {
   RECEIVE_EXPENSE, RECEIVE_EXPENSES
 } from '../actions/expense_action';
-import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import {
+  RECEIVE_CURRENT_USER, 
+  LOGOUT_CURRENT_USER
+} from '../actions/session_actions';
 
 const splitReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -11,10 +14,12 @@ const splitReducer = (state = {}, action) => {
     case RECEIVE_EXPENSES:
     case RECEIVE_EXPENSE:
       if (!action.splits) return newState;
-      Object.values(action.splits).map(split =>{
+      Object.values(action.splits).map(split => {
         newState[split.id] = split
       })
       return newState;
+    case LOGOUT_CURRENT_USER:
+      return {}
     default:
       return state;
   }

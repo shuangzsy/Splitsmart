@@ -14,10 +14,10 @@ const DashboardNav = (props) => {
           <li>
             <a href="#">{props.currentUser.username}</a>
             <ul className="header-notifications">
-              <li><a href="#">Your account</a></li>
+              {/* <li><a href="#">Your account</a></li>
               <li><a href="#">Create a group</a></li>
               <li><a href="#">Fairness calculators</a></li>
-              <li><a href="#">Contact support</a></li>
+              <li><a href="#">Contact support</a></li> */}
               <li> <button onClick={() => props.UserLogout()}>Log Out</button></li>
             </ul>
           </li>
