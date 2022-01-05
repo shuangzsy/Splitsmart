@@ -38,8 +38,8 @@ class LeftNav extends React.Component {
           <li className="all">
             <Link className='all-expense-list' to="/all"> 🗒 All expenses</Link>
           </li>
-          <li>
-            <span>Groups</span>
+          <li className='group-list'>
+            <span className='group-label'>GROUPS     </span>
             <ul>
               {
                 uniqueGroup.map(group => {
@@ -55,8 +55,8 @@ class LeftNav extends React.Component {
             </ul>
           </li>
 
-          <li>
-            <span>Friends</span>
+          <li className='friend-list'>
+            <span className='friend-label'>FRIENDS     </span>
               <ul>
                 {
                   uniqueFriend.map(friend => {
@@ -73,6 +73,11 @@ class LeftNav extends React.Component {
           </li>
           <li className='invite-friend-container-li'>
             <div><CreateFriendContainer/></div>
+          </li>
+
+          <li className='meta-date'>
+            <a href="https://www.linkedin.com/in/shuang-zheng-54a3109b/"><img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1641341961/Screen_Shot_2022-01-04_at_4.17.11_PM_nagrpl.png" /></a>
+            <a href="https://github.com/shuangzsy"><img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1641341973/Screen_Shot_2022-01-04_at_4.17.04_PM_qwa3qn.png" /></a>
           </li>
         </ul>
       </div>

@@ -41,13 +41,13 @@
   margin-left: 5px;
   background: #f6f6f6;
   color: #ccc;
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 5px;
   border-top: 1px solid #f3f3f3;
   border-bottom: 1px solid #eee;
-  text-transform: uppercase;
   width: 300px;
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  height: 30px;
 }
 
 
@@ -97,12 +97,32 @@
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
- .all-expense-list{
+.all-expense-list{
     font-size: 16px;
     color: #999;
     // font-weight: bold;
     font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   }
-  .left_side_bar_list > li:hover{
-    background-color: lightgrey;
+  // .left_side_bar_list > li:hover{
+  //   background-color: lightgrey;
+  // }
+
+.dashboard:hover,.activity:hover,.all:hover{
+  background-color: lightgrey;
   }
+
+.group-list li:hover{
+  background-color: lightgrey;
+  }
+
+.friend-list li:hover{
+  background-color: lightgrey;
+  }
+
+.meta-date {
+  display: flex;
+}
+
+.meta-date img {
+  padding-left: 5px;
+}
