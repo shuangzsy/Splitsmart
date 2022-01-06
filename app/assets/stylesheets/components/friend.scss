@@ -58,3 +58,19 @@
   color: rgb(182, 3, 3);
   font-weight: bold;
 }
+
+.delete-friend-button {
+  border: none;
+  color: rgb(182, 3, 3);
+  font-weight: bold;
+  display: none;
+}
+
+.friend-index-item-container {
+  display:flex;
+  justify-content: space-between;
+}
+
+.friend-index-item-container:hover .delete-friend-button{
+  display: flex;
+}
