@@ -7,12 +7,16 @@ class Api::FriendsController < ApplicationController
 
   def create
     @friend = Friend.new(friend_params)
-    friend_user = User.find_by(email: friend_params[:friend_email])
+    @friend_user = User.find_by(email: friend_params[:friend_email])
     @friend.user_id = current_user.id
-    if @friend.save && friend_user
-      render :show, status: 200
+    if @friend_user
+      if @friend.save
+        render :show, status: 200
+      else
+        render json: @friend.errors.full_messages, status: 400
+      end
     else
-      render json: @friend.errors.full_messages, status: 400
+      render json: ["User does not exsist"], status: 404
     end
   end
 
