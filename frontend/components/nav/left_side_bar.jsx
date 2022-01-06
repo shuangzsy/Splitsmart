@@ -57,7 +57,7 @@ class LeftNav extends React.Component {
 
           <li className='friend-list'>
             <span className='friend-label'>FRIENDS     </span>
-              <ul>
+              {/* <ul>
                 {
                   uniqueFriend.map(friend => {
                     return (
@@ -68,7 +68,7 @@ class LeftNav extends React.Component {
                     )
                   })
                 }
-              </ul>
+              </ul> */}
             <div><FriendIndexContainer/></div>
           </li>
           <li className='invite-friend-container-li'>
