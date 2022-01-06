@@ -3,8 +3,6 @@ import {
   REMOVE_FRIEND_ERRORS
 } from '../actions/friend_action';
 
-
-
 export default (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {

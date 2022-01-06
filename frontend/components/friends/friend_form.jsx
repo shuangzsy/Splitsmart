@@ -7,6 +7,10 @@ class FriendForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // componentDidMount(){
+  //   this.props.removeFriendErrors()
+  // }
+
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value })
@@ -20,6 +24,7 @@ class FriendForm extends React.Component {
   render() {
     return (
       <div className='invite-friend-container'>
+        <p>{this.props.friendErrors[0]}</p>
         <form onSubmit={this.handleSubmit}>
           <div className='invite-friend-form-title'>Add Friend</div>
           <div className='invite-friend-input-button-container'>
