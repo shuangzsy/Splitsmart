@@ -1,7 +1,9 @@
 import {
   RECEIVE_FRIENDS,
   RECEIVE_FRIEND,
-  REMOVE_FRIEND
+  REMOVE_FRIEND,
+  RECEIVE_FRIEND_ERRORS,
+  REMOVE_FRIEND_ERRORS
 } from '../actions/friend_action';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 

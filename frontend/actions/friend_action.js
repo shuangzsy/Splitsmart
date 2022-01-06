@@ -2,6 +2,8 @@ import * as FriendAPIUtil from '../util/friend_api_util';
 export const RECEIVE_FRIENDS = "RECEIVE_FRIENDS";
 export const RECEIVE_FRIEND = "RECEIVE_FRIEND";
 export const REMOVE_FRIEND = "REMOVE_FRIEND";
+export const RECEIVE_FRIEND_ERRORS = "RECEIVE_FRIEND_ERRORS";
+export const REMOVE_FRIEND_ERRORS = "REMOVE_FRIEND_ERRORS";
 
 
 export const receiveFriends = friends => ({
@@ -19,6 +21,15 @@ export const removeFriend = friendId => ({
   friendId
 })
 
+export const receiveFriendErrors = errors => ({
+  type: RECEIVE_FRIEND_ERRORS,
+  errors
+});
+
+export const removeFriendErrors = () => ({
+  type: REMOVE_FRIEND_ERRORS,
+});
+
 
 export const requestFriends = () => (dispatch) => (
   FriendAPIUtil.getFriends().then(
@@ -33,9 +44,11 @@ export const requestFriend = (friendId) => (dispatch) => (
 );
 
 export const createFriend = (friend) => (dispatch) => (
-  FriendAPIUtil.createFriend(friend).then((friend) => {
-    dispatch(receiveFriend(friend))
-  })
+  FriendAPIUtil.createFriend(friend).then(
+    friend => (dispatch(receiveFriend(friend))
+    ), err => (
+      dispatch(receiveFriendErrors(err.responseJSON))
+    ))
 );
 
 export const deleteFriend = (friendId) => (dispatch) => (
