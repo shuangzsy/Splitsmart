@@ -1,5 +1,8 @@
 class Api::GroupsController < ApplicationController
   def index
+    user = User.find_by(id: current_user.id)
+    @groups = user.groups
+    render :index
   end
 
   def create
@@ -13,21 +16,21 @@ class Api::GroupsController < ApplicationController
   end
 
   def show
-    @group = Friend.find(params[:id])
-    if @friend
+    @group = Group.find(params[:id])
+    if @group
       render :show
     else
-      render json: ["Friend does not exsist"], status: 404
+      render json: ["Group does not exsist"], status: 404
     end
   end
 
   def destroy
-    @friend = Friend.find(params[:id])
-    if @friend
-      @friend.destroy
+    @group = Group.find(params[:id])
+    if @group
+      @group.destroy
       render :show
     else
-      render json: ["Friend does not exsist"], status: 404
+      render json: ["Group does not exsist"], status: 404
     end
   end
  

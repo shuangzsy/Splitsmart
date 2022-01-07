@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :expenses, only: [:index, :create, :destroy, :update, :show]
     resources :splits, only: [:index, :show]
     resources :friends, only: [:index, :create, :destroy, :show]
+    resources :groups, only: [:index, :create, :destroy, :show]
   end
   root to: 'static_pages#root'
 end

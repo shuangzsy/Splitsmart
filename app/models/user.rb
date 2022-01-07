@@ -24,6 +24,12 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: :Friend
 
+  has_many :groups,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: :Group
+
+
   # has_many :friends_of,
   # primary_key: :id,
   # foreign_key: :friend_id,
