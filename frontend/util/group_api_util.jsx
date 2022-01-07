@@ -1,29 +1,29 @@
-export const getFriends = () => (
+export const getGroups = () => (
   $.ajax({
-    url: `/api/friends`,
+    url: `/api/groups`,
     method: "GET",
   })
 );
 
-export const getFriend = (id) => (
+export const getGroup = (id) => (
   $.ajax({
     method: 'GET',
-    url: `/api/friends/${id}`
+    url: `/api/groups/${id}`
   })
 );
 
-export const createFriend = (friend) => (
+export const createGroup = (group) => (
   $.ajax({
     method: 'POST',
-    url: '/api/friends',
-    data: { friend }
+    url: '/api/groups',
+    data: { group }
   })
 );
 
-export const deleteFriend = (id) => (
+export const deleteGroup = (id) => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/friends/${id}`
+    url: `/api/groups/${id}`
   })
 );
 
