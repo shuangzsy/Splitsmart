@@ -44,7 +44,6 @@ class LeftNav extends React.Component {
             <span className='group-label'>GROUPS     </span>
             <span><Link to='/groups/new'>+add</Link></span>
             <div><GroupIndexContainer/></div>
-            <div><CreateGroupContainer/></div>
             {/* <ul>
               {
                 uniqueGroup.map(group => {

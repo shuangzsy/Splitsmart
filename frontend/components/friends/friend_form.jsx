@@ -32,7 +32,7 @@ class FriendForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className='invite-friend-form-title'>Add Friend</div>
           <div className='invite-friend-input-button-container'>
-            <div><input className='invite-friend-input' placeholder='Enter an email address' type="text" value={this.state.friend_name} onChange={this.update('friend_email')} /></div>
+            <div><input className='invite-friend-input' placeholder='Enter an email address' type="text" value={this.state.friend_email} onChange={this.update('friend_email')} /></div>
             <div><input className='invite-friend-submit-button' type="submit" value="Add Friend" /></div>
             <div className='friend-error-show-up'>{this.props.friendErrors[0]}</div>
           </div>

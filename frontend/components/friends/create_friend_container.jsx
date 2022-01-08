@@ -4,7 +4,7 @@ import FriendForm from './friend_form';
 
 const mSTP = state => ({
   friend: {
-    FriendEmail: ''
+    friend_email: ''
   },
   formType: "Add friends",
   friendErrors: state.friendErrors

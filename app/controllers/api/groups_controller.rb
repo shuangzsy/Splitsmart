@@ -7,11 +7,11 @@ class Api::GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-      if @group.save
-        render :show, status: 200
-      else
-        render json: @group.errors.full_messages, status: 400
-      end
+    @group.user_id = current_user.id
+    if @group.save
+      render :show, status: 200
+    else
+      render json: @group.errors.full_messages, status: 400
     end
   end
 

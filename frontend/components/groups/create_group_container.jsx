@@ -4,7 +4,7 @@ import GroupForm from './group_form';
 
 const mSTP = state => ({
   group: {
-    groupName: ''
+    group_name: ''
   },
   formType: "Add Groups"
   // groupErrors: state.groupErrors
