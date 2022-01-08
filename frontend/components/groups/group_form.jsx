@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class GroupForm extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class GroupForm extends React.Component {
       <div className='add-group-container'>
         <form className='add-group-form' onSubmit={this.handleSubmit}>
           <div>
-            <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1641623030/Screen_Shot_2022-01-07_at_10.20.53_PM_eyteci.png" alt="" />
+            <Link to="/dashboard"><img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1641623030/Screen_Shot_2022-01-07_at_10.20.53_PM_eyteci.png" alt="" /></Link>
           </div>
           <div className='group-info-container'>
             <div className='add-group-form-title'>START A NEW GROUP</div>

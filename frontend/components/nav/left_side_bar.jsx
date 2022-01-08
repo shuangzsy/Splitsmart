@@ -42,7 +42,7 @@ class LeftNav extends React.Component {
           </li>
           <li className='group-list'>
             <span className='group-label'>GROUPS     </span>
-            <span><Link to='/groups/new'>+add</Link></span>
+            <span><Link className='group-new-link' to='/groups/new'>+add</Link></span>
             <div><GroupIndexContainer/></div>
             {/* <ul>
               {
@@ -61,6 +61,7 @@ class LeftNav extends React.Component {
 
           <li className='friend-list'>
             <span className='friend-label'>FRIENDS     </span>
+            <span><Link className='group-new-link' to='/groups/new'>+add</Link></span>
               {/* <ul>
                 {
                   uniqueFriend.map(friend => {

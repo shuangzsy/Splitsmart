@@ -134,7 +134,7 @@ class ExpenseForm extends React.Component {
           <div className="human_summary">
             Paid by 
             {/* <input type="text" placeholder="you" value={this.state.expense.payer} onChange={this.updateExpense('payer')} />  */} 
-            <select className='group-selector' value={this.state.expense.payer} onChange={this.updateExpense('payer')}>
+            <select className='split-people-selector' value={this.state.expense.payer} onChange={this.updateExpense('payer')}>
               <option>...</option>
               <option value="you">you</option>
               <option value={this.state.splits[1][0]}>{this.state.splits[1][0]}</option>

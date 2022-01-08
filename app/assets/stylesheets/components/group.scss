@@ -9,6 +9,10 @@
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
+.add-group-container img{
+  cursor: pointer;
+}
+
 .add-group-form {
   position: absolute;
   top: 50%;
@@ -44,6 +48,8 @@
   padding: 0 10px;
   margin: 0 auto;
   position: relative;
+  // display: flex;
+  // justify-content: space-evenly;
 }
 
 .add-group-input {
@@ -76,6 +82,20 @@
   border-radius: 5px;
   border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
 }
+
+.group-index-item-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-group-button {
+  display: none
+}
+
+.group-index-item-container:hover .delete-group-button {
+  display: flex
+}
+
 
 
 
