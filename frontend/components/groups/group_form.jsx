@@ -24,12 +24,18 @@ class GroupForm extends React.Component {
   render() {
     return (
       <div className='add-group-container'>
-        <form onSubmit={this.handleSubmit}>
-          <div className='add-group-form-title'>Add Group</div>
-          <div className='add-group-input-button-container'>
-            <div><input className='add-group-input' placeholder='Enter the group name' type="text" value={this.state.group_name} onChange={this.update('group_name')} /></div>
-            <div><input className='add-group-submit-button' type="submit" value="Add Group" /></div>
-            {/* <div className='friend-error-show-up'>{this.props.friendErrors[0]}</div> */}
+        <form className='add-group-form' onSubmit={this.handleSubmit}>
+          <div>
+            <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1641623030/Screen_Shot_2022-01-07_at_10.20.53_PM_eyteci.png" alt="" />
+          </div>
+          <div className='group-info-container'>
+            <div className='add-group-form-title'>START A NEW GROUP</div>
+            <div className='add-group-form-title-2'>My group shall be called...</div>
+            <div className='add-group-input-button-container'>
+              <input className='add-group-input' placeholder='Funkytown' type="text" value={this.state.group_name} onChange={this.update('group_name')} />
+              <input className='add-group-submit-button' type="submit" value="Save" />
+              {/* <div className='friend-error-show-up'>{this.props.friendErrors[0]}</div> */}
+            </div>
           </div>
         </form>
       </div>
