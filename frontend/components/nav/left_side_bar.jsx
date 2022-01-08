@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import FriendIndexContainer from '../friends/friend_index_container';
 import CreateFriendContainer from '../friends/create_friend_container';
+import GroupIndexContainer from '../groups/group_index_container';
+import CreateGroupContainer from '../groups/create_group_container';
 
 class LeftNav extends React.Component {
   constructor(props) {
@@ -40,7 +42,10 @@ class LeftNav extends React.Component {
           </li>
           <li className='group-list'>
             <span className='group-label'>GROUPS     </span>
-            <ul>
+            <span><Link to='/groups/new'>+add</Link></span>
+            <div><GroupIndexContainer/></div>
+            <div><CreateGroupContainer/></div>
+            {/* <ul>
               {
                 uniqueGroup.map(group => {
                   // if (length > 0)
@@ -52,7 +57,7 @@ class LeftNav extends React.Component {
                   )
                 })
               }
-            </ul>
+            </ul> */}
           </li>
 
           <li className='friend-list'>

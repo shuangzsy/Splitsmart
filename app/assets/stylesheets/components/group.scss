@@ -1,0 +1,76 @@
+.invite-friend-form-title{
+  background: #5bc5a7;
+  color: #fff;
+  border: 1px solid #39a385;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 3px 0px;
+  margin: 15px 0 0 10px;
+  text-shadow: 0 -1px 0 #3eaf8f;
+  line-height: 18px;
+  width:auto;
+}
+
+.invite-friend-input-button-container{
+  margin: 0 0 0 10px;
+  border: 1px solid #ccc;
+  border-top: none;
+  padding: 5px;
+}
+
+.invite-friend-input{
+  width: 145px;
+  margin: 0 0 5px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  display: inline-block;
+  height: 18px;
+  padding: 4px;
+  margin-bottom: 9px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #555555;
+}
+
+.invite-friend-submit-button{
+    font-size: 12px;
+    padding: 2px 6px;
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    display: inline-block;
+    line-height: 18px;
+    color: #333333;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, !important;
+}
+
+.invite-friend-container-li:hover{
+  background-color: white !important;
+}
+
+.friend-error-show-up{
+  font-size: 10px;
+  color: rgb(182, 3, 3);
+  font-weight: bold;
+}
+
+.delete-friend-button {
+  border: none;
+  color: rgb(182, 3, 3);
+  font-weight: bold;
+  display: none;
+}
+
+.friend-index-item-container {
+  display:flex;
+  justify-content: space-between;
+}
+
+.friend-index-item-container:hover .delete-friend-button{
+  display: flex;
+}
