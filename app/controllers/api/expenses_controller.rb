@@ -83,7 +83,8 @@ class Api::ExpensesController < ApplicationController
       :creator_id, 
       :group_name, 
       :payer,
-      :settled
+      :settled,
+      :split_method
     )
   end
   
