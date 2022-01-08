@@ -67,13 +67,17 @@ class ExpenseForm extends React.Component {
 
 
   render(){
-    let { allSplits, allExpenses, currentUser, friends } = this.props;
+    let { allSplits, allExpenses, currentUser, friends, groups } = this.props;
     let uniqueFriendEmail = [currentUser.email];
     let uniqueGroup = [];
-    allExpenses.map(expense => {
-      if (!uniqueGroup.includes(expense.groupName)) {
-        uniqueGroup.push(expense.groupName)
-      }
+    // allExpenses.map(expense => {
+    //   if (!uniqueGroup.includes(expense.groupName)) {
+    //     uniqueGroup.push(expense.groupName)
+    //   }
+    // })
+
+    groups.map(group => {
+      uniqueGroup.push(group.groupName)
     })
 
     let friendEmailList = [];

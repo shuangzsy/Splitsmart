@@ -23,7 +23,8 @@ const mSTP = (state, ownProps) => {
     allSplits: Object.values(state.entities.splits),
     allExpenses: Object.values(state.entities.expenses),
     currentUser: state.session.currentUser,
-    friends: Object.values(state.entities.friends)
+    friends: Object.values(state.entities.friends),
+    groups: Object.values(state.entities.groups),
 }}
 
 const mDTP = dispatch => ({

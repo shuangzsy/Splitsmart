@@ -18,7 +18,8 @@ const mSTP = state => ({
   formType: "Add an expense",
   currentUserEmail: state.session.currentUser.email,
   currentUser: state.session.currentUser,
-  friends: Object.values(state.entities.friends)
+  friends: Object.values(state.entities.friends),
+  groups: Object.values(state.entities.groups),
 })
 
 const mDTP = dispatch => ({
