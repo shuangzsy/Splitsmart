@@ -151,8 +151,10 @@ class ExpenseForm extends React.Component {
             and split 
             <select className='split-method-selector' value={this.state.expense.split_method} onChange={this.updateExpense('split_method')}>
               <option value="equally">equally</option>
+              {this.state.expense.payer === "you" ?
+              <option value="theyOweFull">They owe the full amount</option>:
               <option value="youOweFull">You owe the full amount</option>
-              <option value="theyOweFull">They owe the full amount</option>
+            }
             </select>
             <div className="details">($0.00/person)</div>
           </div>
