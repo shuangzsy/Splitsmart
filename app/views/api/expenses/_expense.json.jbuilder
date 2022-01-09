@@ -10,4 +10,4 @@
 #   end
 # end
 
-json.extract! expense, :id, :description, :total_amount, :creator_id, :settled, :created_at, :group_name, :payer
+json.extract! expense, :id, :description, :total_amount, :creator_id, :settled, :created_at, :group_name, :payer, :split_method

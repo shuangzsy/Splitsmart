@@ -46,6 +46,23 @@ class ExpenseIndexItem extends React.Component {
         })
       })
     }
+
+    //conditions for different split-method
+    let lendShow;
+    if (payerUsername === "you"){
+      if (expense.splitMethod === "equally"){
+        lendShow = <span><strong style={{ color: '#5bc5a7' }}>${(Math.abs(expense.totalAmount) * 0.5).toFixed(2)}</strong></span>
+      }else{
+        lendShow = <span><strong style={{ color: '#5bc5a7' }}>${(Math.abs(expense.totalAmount)).toFixed(2)}</strong></span>
+      }
+    }else{
+      if (expense.splitMethod === "equally"){
+        lendShow = <span><strong style={{ color: '#ff652f' }}>${(Math.abs(expense.totalAmount) * 0.5).toFixed(2)}</strong></span>
+      }else{
+        lendShow = <span><strong style={{ color: '#ff652f' }}>${(Math.abs(expense.totalAmount)).toFixed(2)}</strong></span>
+      }
+    }
+
   return (
       <>
         <div className='expense-overview-window'>
@@ -63,10 +80,11 @@ class ExpenseIndexItem extends React.Component {
           </div>
           <div className="ower-info">
           <span className='ower-uer-info'>{payerUsername} lent </span>
-            {expense.payer === "you" ?
+          {/* {payerUsername === "you" ?
               <span><strong style={{ color: '#5bc5a7' }}>${(Math.abs(expense.totalAmount)*0.5).toFixed(2)}</strong></span> :
               <span><strong style={{ color: '#ff652f' }}>${(Math.abs(expense.totalAmount) * 0.5).toFixed(2)}</strong></span>
-            }
+            } */}
+            {lendShow}
           </div>
           <div className='expense-delete-button-container'>
             <button className='expense-delete-button' onClick={() => deleteExpense(expense.id)}>X</button>

@@ -14,7 +14,7 @@ const mSTP = (state, ownProps) => ({
 const mDTP = (dispatch) => ({
   UserLogout: () => dispatch(logout()),
   AddExpense: (
-  <button onClick={() => dispatch(openModal('addexpense'))}>
+  <button className='add-expense-button' onClick={() => dispatch(openModal('addexpense'))}>
     Add an expense
   </button>)
 })

@@ -44,21 +44,31 @@ class ExpenseForm extends React.Component {
     let stateCopy = Object.assign({}, this.state);
     stateCopy.splits = Object.fromEntries(stateCopy.splits);
 
+    if (stateCopy.expense.split_method === "youOweFull"){
+      stateCopy.splits[this.props.currentUserEmail] = 1;
+      stateCopy.splits[this.state.splits[1][0]] = 0;
+    } else if (stateCopy.expense.split_method === "theyOweFull"){
+      stateCopy.splits[this.props.currentUserEmail] = 0;
+      stateCopy.splits[this.state.splits[1][0]] = 1;
+    }
+    
+    debugger;
+
     if (stateCopy.expense.payer === "you"){
       stateCopy.splits[this.props.currentUserEmail] = -stateCopy.splits[this.props.currentUserEmail]}
     else {
       stateCopy.splits[stateCopy.expense.payer] = -stateCopy.splits[stateCopy.expense.payer]
     }
     
-    if (this.props.formType === "Add an expense")
-      {this.props.submitExpense(stateCopy.expense, stateCopy.splits).then(this.props.closeModal);}
+    if (this.props.formType === "Add an expense"){
+      this.props.submitExpense(stateCopy.expense, stateCopy.splits).then(this.props.closeModal);}
     else{
       this.props.submitExpense(stateCopy.expense, stateCopy.splits);
     }
     
     //redirect the page
-    if (this.props.formType === "Add an expense")
-      {this.props.history.push('/dashboard');}
+    if (this.props.formType === "Add an expense"){
+      this.props.history.push('/dashboard');}
     else {
       this.props.history.push('/dashboard');
     }
@@ -158,7 +168,7 @@ class ExpenseForm extends React.Component {
               {uniqueGroup.map((group) => {
                 if (group !== ""){
                   return(
-                    <option value={group}>{group}</option>
+                    <option key={group} value={group}>{group}</option>
                   )}
                 })
               }
