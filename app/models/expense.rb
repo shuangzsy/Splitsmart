@@ -11,6 +11,7 @@ class Expense < ApplicationRecord
   primary_key: :id,
   foreign_key: :expense_id,
   class_name: :Split
+  # dependent: :destroy 
 
 
 

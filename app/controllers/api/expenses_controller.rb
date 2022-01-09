@@ -69,6 +69,14 @@ class Api::ExpensesController < ApplicationController
   def destroy
     @expense = Expense.find(params[:id])
     if @expense
+      splits = Split.where(expense_id: @expense.id)
+      if splits
+        splits.each do |split|
+          split.destroy
+        end
+      else
+        render json: ["Splits under this expense do not exsist"]
+      end
       @expense.destroy
       render :show
     else

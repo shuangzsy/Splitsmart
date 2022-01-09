@@ -27,7 +27,7 @@ class GroupForm extends React.Component {
       <div className='add-group-container'>
         <form className='add-group-form' onSubmit={this.handleSubmit}>
           <div>
-            <Link to="/dashboard"><img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1641623030/Screen_Shot_2022-01-07_at_10.20.53_PM_eyteci.png" alt="" /></Link>
+            <Link to="/dashboard"><img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1641708959/Screen_Shot_2022-01-08_at_10.08.58_PM_fsdfth.png" alt="" /></Link>
           </div>
           <div className='group-info-container'>
             <div className='add-group-form-title'>START A NEW GROUP</div>

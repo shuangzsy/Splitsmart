@@ -1,5 +1,5 @@
 import {
-  RECEIVE_EXPENSE, RECEIVE_EXPENSES
+  RECEIVE_EXPENSE, RECEIVE_EXPENSES, REMOVE_EXPENSE
 } from '../actions/expense_action';
 import {
   RECEIVE_CURRENT_USER, 
@@ -18,6 +18,13 @@ const splitReducer = (state = {}, action) => {
         newState[split.id] = split
       })
       return newState;
+    case REMOVE_EXPENSE:
+      Object.values(newState).map(split => {
+        if (split.expenseId === action.expenseId){
+          delete newState[split.id];
+        }
+      })
+      return newState
     case LOGOUT_CURRENT_USER:
       return {}
     default:
