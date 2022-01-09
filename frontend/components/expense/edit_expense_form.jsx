@@ -21,6 +21,7 @@ class EditExpenseForm extends React.Component {
     copyExpense["payer"] = expense["payer"];
     copyExpense["settled"] = expense["settled"];
     copyExpense["total_amount"] = expense["totalAmount"];
+    copyExpense["split_method"] = expense["splitMethod"];
 
     return (
       <ExpenseForm

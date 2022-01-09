@@ -10,7 +10,9 @@ const mSTP = state => ({
     total_amount: '',
     creator_id: state.entities.users.id,
     settled: false,
-    group_name:''
+    group_name:'',
+    payer:'you',
+    split_method:'equally'
   },
   splits: [[state.session.currentUser.email, 0.5],['',0.5]],
   allSplits: Object.values(state.entities.splits),

@@ -135,12 +135,15 @@ class ExpenseForm extends React.Component {
             Paid by 
             {/* <input type="text" placeholder="you" value={this.state.expense.payer} onChange={this.updateExpense('payer')} />  */} 
             <select className='split-people-selector' value={this.state.expense.payer} onChange={this.updateExpense('payer')}>
-              <option>...</option>
               <option value="you">you</option>
               <option value={this.state.splits[1][0]}>{this.state.splits[1][0]}</option>
             </select>
             and split 
-            <a href=""> equally</a>
+            <select className='split-method-selector' value={this.state.expense.split_method} onChange={this.updateExpense('split_method')}>
+              <option value="equally">equally</option>
+              <option value="youOweFull">You owe the full amount</option>
+              <option value="theyOweFull">They owe the full amount</option>
+            </select>
             <div className="details">($0.00/person)</div>
           </div>
 

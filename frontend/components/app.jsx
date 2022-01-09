@@ -5,6 +5,7 @@ import UserProfileContainer from './user/user_profile_container';
 import ExpenseIndexContainer from './expense/expense_index_container';
 import CreateGroupContainer from './groups/create_group_container';
 import ExpenseShowContainer from './expense/expense_show_container';
+import CreateFriendContainer from './friends/create_friend_container';
 import mainNav from './main_nav';
 import {
   Route,
@@ -18,7 +19,6 @@ import WelcomePage from './welcome';
 
 const App = () => (
   <>
-    
     <Switch>
       <AuthRoute exact path="/" component={WelcomePage} /> 
       <AuthRoute exact path="/login" component={LoginFormContainer} />
@@ -28,8 +28,8 @@ const App = () => (
       <ProtectedRoute exact path='/all' component={ExpenseIndexContainer} />
       <ProtectedRoute exact path='/all/:expenseId' component={ExpenseShowContainer} />
       <ProtectedRoute exact path='/groups/new' component={CreateGroupContainer} />
-    </Switch>
-    
+      <ProtectedRoute exact path='/friends/new' component={CreateFriendContainer} />
+    </Switch> 
   </>
 
 );

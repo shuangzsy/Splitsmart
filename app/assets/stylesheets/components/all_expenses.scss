@@ -225,8 +225,25 @@ select{
 }
 
 .split-people-selector{
-  width: 30px;
+  width: 50px;
   border: 1px dashed #ccc;
   margin-left: 5px;
   margin-right: 5px;
+  color: #5cc5a7;
+}
+
+.split-method-selector{
+  width: 80px;
+  border: 1px dashed #ccc;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #5cc5a7;
+}
+
+.group-selector{
+  width: fit-content;
+  border: 1px solid #ccc;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #666;
 }
