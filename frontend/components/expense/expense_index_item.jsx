@@ -33,7 +33,7 @@ class ExpenseIndexItem extends React.Component {
   render(){
     if (!this.props.expense) return "loading";
     let monthRef = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
-    let {expense, splits, deleteExpense} = this.props;
+    let {expense, splits, deleteExpense, users} = this.props;
 
     let payerUsername = "you";
     // debugger;
@@ -61,6 +61,17 @@ class ExpenseIndexItem extends React.Component {
       }else{
         lendShow = <span><strong style={{ color: '#ff652f' }}>${(Math.abs(expense.totalAmount)).toFixed(2)}</strong></span>
       }
+    }
+
+    //generate the creator username
+    let creatorId = expense.creatorId;
+    let creatorUsername;
+    if (users){
+      users.map(user => {
+        if (user.id === creatorId){
+          creatorUsername = user.username
+        }
+      })
     }
 
   return (
@@ -99,7 +110,7 @@ class ExpenseIndexItem extends React.Component {
             <div>
               <div className="expense-description">{expense.description}</div>
               <div className="total-amount">${Math.abs(expense.totalAmount).toFixed(2)}</div>
-              <div className="edit-by">Added by ... on {expense.createdAt}</div>
+            <div className="edit-by">Added by {creatorUsername} on {expense.createdAt.slice(0,10)}</div>
               {/* <button className="edit-expense-button">Edit Expense</button > */}
             <button className="edit-expense-button" onClick={() => this.toggleModal()}>
               Edit Expense

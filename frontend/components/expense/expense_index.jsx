@@ -25,7 +25,7 @@ class ExpenseIndex extends React.Component {
 
 
   render() {
-    const { expenses, deleteExpense, editExpense, splits } = this.props;
+    const { expenses, deleteExpense, editExpense, splits, users } = this.props;
     return (
       <div>
         <Modal />
@@ -40,7 +40,7 @@ class ExpenseIndex extends React.Component {
             </div>
             <ul>
               {
-                expenses.map(expense => <ExpenseIndexItem key={expense.id} expense={expense} deleteExpense={deleteExpense} editExpense={editExpense} splits={splits} />)
+                expenses.map(expense => <ExpenseIndexItem key={expense.id} expense={expense} deleteExpense={deleteExpense} editExpense={editExpense} splits={splits} users={users}/>)
               }
             </ul>
           </div>

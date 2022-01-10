@@ -9,7 +9,8 @@ import { logout } from '../../actions/session_actions';
 const mSTP = (state) => ({
   expenses: Object.values(state.entities.expenses),
   currentUser: state.session.currentUser,
-  splits: Object.values(state.entities.splits)
+  splits: Object.values(state.entities.splits),
+  users: Object.values(state.entities.users)
 });
 
 const mDTP = (dispatch) => ({

@@ -11,3 +11,7 @@ json.splits do
       end
   end
 end
+
+json.activity do
+  json.partial! 'api/expenses/activity', activity: @activity
+end

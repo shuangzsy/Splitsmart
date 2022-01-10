@@ -29,6 +29,10 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: :Group
 
+  has_many :activities,
+  primary_key: :id,
+  foreign_key: :participant_id,
+  class_name: :Activity
 
   # has_many :friends_of,
   # primary_key: :id,

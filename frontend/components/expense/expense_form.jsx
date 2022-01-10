@@ -51,8 +51,6 @@ class ExpenseForm extends React.Component {
       stateCopy.splits[this.props.currentUserEmail] = 0;
       stateCopy.splits[this.state.splits[1][0]] = 1;
     }
-    
-    debugger;
 
     if (stateCopy.expense.payer === "you"){
       stateCopy.splits[this.props.currentUserEmail] = -stateCopy.splits[this.props.currentUserEmail]}
@@ -115,7 +113,7 @@ class ExpenseForm extends React.Component {
             {/* <input type="text" value={this.state.splits[1][0]} onChange={this.updateSplit} /> */}
             <select className='split-with-selector' value={this.state.splits[1][0]} onChange={this.updateSplit}>
               <option>select a friend</option>
-              <option value="demofriend@demo.com">demofriend@demo.com</option>
+              <option value="imthedemofriend@sz.com">imthedemofriend@sz.com</option>
               {friendEmailList.map((email) => {
                 if (!uniqueFriendEmail.includes(email) && email !=="demofriend@demo.com")
                 {
