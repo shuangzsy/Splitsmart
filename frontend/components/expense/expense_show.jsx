@@ -16,7 +16,7 @@ class ExpenseShow extends React.Component {
           this.props.splits.map(split => {
             if (split.oweAmount > 0) {
               return(
-                    <div>
+                    <div key={split.id}>
                         {/* <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638517195/Screen_Shot_2021-12-02_at_11.39.35_PM_bwjsnw.png" alt="" />  */}
                         <strong>{split.username}</strong> owes <strong>${(split.oweAmount).toFixed(2)}</strong>
                     </div>
@@ -24,7 +24,7 @@ class ExpenseShow extends React.Component {
                 }
             else {
               return(
-                    <div>
+                    <div key={split.id}>
                         {/* <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638517195/Screen_Shot_2021-12-02_at_11.39.28_PM_rh8ezb.png" alt="" /> */}
                         <strong>{split.username}</strong> paid <strong>${(-split.oweAmount * 2).toFixed(2)}</strong> and owes <strong>${-split.oweAmount}</strong>
                     </div>

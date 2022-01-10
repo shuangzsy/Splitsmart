@@ -9,9 +9,9 @@ const activityReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return action.activities || newState
-    case RECEIVE_EXPENSE:
-      newState[action.activity.id] = action.activity;
-      return newState;
+    // case RECEIVE_EXPENSE:
+    //   newState[action.activity.id] = action.activity;
+    //   return newState;
     case RECEIVE_EXPENSES:
       return action.activities || newState;
     case LOGOUT_CURRENT_USER:
