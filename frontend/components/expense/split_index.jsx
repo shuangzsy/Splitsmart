@@ -12,9 +12,9 @@ class SplitIndex extends React.Component {
   }
 
   render() {
-    const { splits, deleteExpense, currentUser, currentUsername } = this.props;
+    const { splits, deleteExpense, currentUser, currentUsername, expenses } = this.props;
     const oweYou = splits.filter(split => split.email !== currentUser && split.oweAmount > 0);
-    const youOwe = splits.filter(split => split.email !== currentUser && split.oweAmount < 0);
+    const youOwe = splits.filter(split => split.email !== currentUser && split.oweAmount <= 0);
     return (
       <div className="owe-details">
           <div className ="owe-you-details">
@@ -22,7 +22,8 @@ class SplitIndex extends React.Component {
               oweYou.map(split => {
                 return <SplitIndexItem
                 key={split.id} 
-                split={split} 
+                split={split}
+                expenses={expenses} 
                 currentUser = {currentUser}
                 currentUsername = {currentUsername}/>
               })
@@ -33,7 +34,8 @@ class SplitIndex extends React.Component {
               youOwe.map(split => {
                 return <SplitIndexItem 
                 key={split.id} 
-                split={split} 
+                split={split}
+                expenses={expenses} 
                 currentUser = {currentUser}
                 currentUsername = {currentUsername}/>
               })
