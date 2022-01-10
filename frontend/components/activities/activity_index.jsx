@@ -10,9 +10,9 @@ class ActivityIndex extends React.Component {
     // this.state 
   }
 
-  // componentDidMount() {
-  //   this.props.requestFriends();
-  // }
+  componentDidMount() {
+    this.props.requestExpenses();
+  }
 
   render() {
     const { activities } = this.props;
