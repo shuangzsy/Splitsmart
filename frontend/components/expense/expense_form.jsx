@@ -63,6 +63,8 @@ class ExpenseForm extends React.Component {
     else{
       this.props.submitExpense(stateCopy.expense, stateCopy.splits);
     }
+
+
     
     //redirect the page
     if (this.props.formType === "Add an expense"){
@@ -115,7 +117,7 @@ class ExpenseForm extends React.Component {
               <option>select a friend</option>
               <option value="imthedemofriend@sz.com">imthedemofriend@sz.com</option>
               {friendEmailList.map((email) => {
-                if (!uniqueFriendEmail.includes(email) && email !=="demofriend@demo.com")
+                if (!uniqueFriendEmail.includes(email) && email !=="imthedemofriend@sz.com")
                 {
                   uniqueFriendEmail.push(email)
                   return(

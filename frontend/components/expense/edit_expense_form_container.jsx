@@ -3,6 +3,7 @@ import { updateExpense, requestExpense } from '../../actions/expense_action';
 import { withRouter } from 'react-router-dom';
 import React from 'react';
 import EditExpenseForm from './edit_expense_form';
+import { createActivity } from '../../actions/activity_action';
 
 
 const mSTP = (state, ownProps) => {
@@ -29,7 +30,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
   requestExpense: (id) => dispatch(requestExpense(id)),
-  submitExpense: (expense, splits) => dispatch(updateExpense(expense, splits))
+  submitExpense: (expense, splits) => dispatch(updateExpense(expense, splits)),
+  submitActivity: (activity) => dispatch(createActivity(activity))
 })
 
 export default withRouter(connect(mSTP, mDTP)(EditExpenseForm))

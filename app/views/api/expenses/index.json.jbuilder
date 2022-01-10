@@ -16,3 +16,13 @@ json.splits do
         end
     end
 end
+
+json.activities do 
+    @expenses.each do |expense|
+        expense.activities.each do |activity|
+            json.set! activity.id do
+                json.partial! 'api/expenses/activity', activity: activity
+            end
+        end
+    end
+end

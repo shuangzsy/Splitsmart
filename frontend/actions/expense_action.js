@@ -3,17 +3,19 @@ export const RECEIVE_EXPENSES = "RECEIVE_EXPENSES";
 export const RECEIVE_EXPENSE = "RECEIVE_EXPENSE";
 export const REMOVE_EXPENSE = "REMOVE_EXPENSE";
 
-export const receiveExpenses = ({expenses, splits}) => ({
+export const receiveExpenses = ({expenses, splits, activities}) => ({
   type: RECEIVE_EXPENSES,
   expenses,
-  splits
+  splits,
+  activities
 });
 
-export const receiveExpense = ({expense, splits}) => {
+export const receiveExpense = ({expense, splits, activity}) => {
   return {
     type: RECEIVE_EXPENSE,
     expense,
-    splits
+    splits,
+    activity
   }
 };
 
@@ -34,8 +36,8 @@ export const requestExpense = (expenseId) => (dispatch) => (
   )
 );
 
-export const createExpense = (expense, splits) => (dispatch) => (
-  ExpenseAPIUtil.createExpense(expense, splits).then((payload) => {
+export const createExpense = (expense, splits, activity) => (dispatch) => (
+  ExpenseAPIUtil.createExpense(expense, splits, activity).then((payload) => {
   dispatch(receiveExpense(payload))})
 );
 

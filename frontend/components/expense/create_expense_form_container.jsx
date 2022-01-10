@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { createExpense } from '../../actions/expense_action';
+import { createActivity } from '../../actions/activity_action';
 import ExpenseForm from './expense_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { withRouter } from 'react-router-dom';
@@ -25,8 +26,8 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-  
   submitExpense: (expense, splits) => dispatch(createExpense(expense, splits)),
+  submitActivity: (activity) => dispatch(createActivity(activity)),
   closeModal: () => dispatch(closeModal()),
 })
 

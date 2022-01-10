@@ -6,6 +6,7 @@ import ExpenseIndexContainer from './expense/expense_index_container';
 import CreateGroupContainer from './groups/create_group_container';
 import ExpenseShowContainer from './expense/expense_show_container';
 import CreateFriendContainer from './friends/create_friend_container';
+import ActivityIndexContainer from './activities/activity_index_container';
 import mainNav from './main_nav';
 import {
   Route,
@@ -28,6 +29,7 @@ const App = () => (
       <ProtectedRoute exact path='/all/:expenseId' component={ExpenseShowContainer} />
       <ProtectedRoute exact path='/groups/new' component={CreateGroupContainer} />
       <ProtectedRoute exact path='/friends/new' component={CreateFriendContainer} />
+      <ProtectedRoute exact path='/activity' component={ActivityIndexContainer} />
     </Switch> 
   </>
 
