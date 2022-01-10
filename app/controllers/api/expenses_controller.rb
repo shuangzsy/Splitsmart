@@ -17,11 +17,11 @@ class Api::ExpensesController < ApplicationController
         @expense.total_amount = total_amount
         @expense.creator_id = current_user.id
         @expense.save!
-        @activity = Activity.create!(
-          expense_id: @expense.id,
-          participant_id: current_user.id,
-          event: "Add"
-          )
+        # @activity = Activity.create!(
+        #   expense_id: @expense.id,
+        #   participant_id: current_user.id,
+        #   event: "Add"
+        #   )
         @splits = split_params.to_a.map do |split|
           user = User.find_by(email: split[0])
           split_amount = total_amount * split[1].to_f.round(2)
@@ -63,11 +63,11 @@ class Api::ExpensesController < ApplicationController
       )
     }
 
-    @activity = Activity.create!(
-      expense_id: @expense.id,
-      participant_id: current_user.id,
-      event: "Update"
-    )
+    # @activity = Activity.create!(
+    #   expense_id: @expense.id,
+    #   participant_id: current_user.id,
+    #   event: "Update"
+    # )
 
     # debugger
     if @expense.creator_id == current_user.id && @expense.update(expense_params)
@@ -80,11 +80,11 @@ class Api::ExpensesController < ApplicationController
   def destroy
     @expense = Expense.find(params[:id])
     if @expense
-      @activity = Activity.create!(
-        expense_id: @expense.id,
-        participant_id: current_user.id,
-        event: "Delete"
-      )
+      # @activity = Activity.create!(
+      #   expense_id: @expense.id,
+      #   participant_id: current_user.id,
+      #   event: "Delete"
+      # )
       splits = Split.where(expense_id: @expense.id)
       if splits
         splits.each do |split|

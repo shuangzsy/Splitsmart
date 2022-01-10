@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :splits, only: [:index, :show]
     resources :friends, only: [:index, :create, :destroy, :show]
     resources :groups, only: [:index, :create, :destroy, :show]
-    resources :activities, only: [:index, :create, :destroy, :show]
+    resources :activities, only: [:index, :create, :show]
   end
   root to: 'static_pages#root'
 end
