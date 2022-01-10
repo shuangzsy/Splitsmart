@@ -8,6 +8,7 @@ export default class SessionForm extends React.Component {
     super(props);
     this.state = props.user;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount(){
@@ -27,17 +28,17 @@ export default class SessionForm extends React.Component {
     }
   }
 
-  // renderErrors() {
-  //   return (
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  renderErrors() {
+    return (
+      <ul className='session-form-error-messages'>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   render() {
     { if (this.props.formType === 'signup'){
@@ -46,7 +47,6 @@ export default class SessionForm extends React.Component {
         <MainNav />
         <div className='signup_container'> 
           <div className='signup_form'>
-            <p>{this.props.errors[0]}</p>
             <form className='signup_form_details' onSubmit={this.handleSubmit}>
               <label style={{color: 'gray'}}>INTRODUCE YOURSELF</label>
               <label htmlFor="username">Hi there! My name is</label>
@@ -57,6 +57,7 @@ export default class SessionForm extends React.Component {
               <input id="password" type="password" onChange={this.update('password')} />
               <button >Sign up!</button>
             </form>
+            {this.renderErrors()}
           </div>
         </div>
       </div>)}
@@ -66,7 +67,6 @@ export default class SessionForm extends React.Component {
         <div className='login_container'>
           <div className='login_form'>
             <h1>Log In</h1>
-            <p>{this.props.errors[0]}</p>
             <form className='login_form_details' onSubmit={this.handleSubmit}>
               <label htmlFor="email">Email address</label>
               <input id="email" type="text" onChange={this.update('email')} />
@@ -75,6 +75,7 @@ export default class SessionForm extends React.Component {
               <button style={{ backgroundColor: "#1CC29F", color: 'white' }} >Log in</button>
             </form>
             <button className="demo-button" style={{ backgroundColor: "#1CC29F", color: 'white' }} onClick={() => this.props.submitForm(this.props.demoUser)}>Demo</button>
+            {this.renderErrors()}
           </div>
         </div>
       </div>
