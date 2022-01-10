@@ -81,8 +81,8 @@ class LeftNav extends React.Component {
           </li>
 
           <li className='meta-date'>
-            <a href="https://www.linkedin.com/in/shuang-zheng-54a3109b/"><img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1641341961/Screen_Shot_2022-01-04_at_4.17.11_PM_nagrpl.png" /></a>
-            <a href="https://github.com/shuangzsy"><img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1641341973/Screen_Shot_2022-01-04_at_4.17.04_PM_qwa3qn.png" /></a>
+            <a href="https://www.linkedin.com/in/shuang-zheng-54a3109b/" target="_blank"><img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1641341961/Screen_Shot_2022-01-04_at_4.17.11_PM_nagrpl.png" /></a>
+            <a href="https://github.com/shuangzsy" target="_blank"><img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1641341973/Screen_Shot_2022-01-04_at_4.17.04_PM_qwa3qn.png" /></a>
           </li>
         </ul>
       </div>
