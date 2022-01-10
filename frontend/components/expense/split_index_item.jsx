@@ -25,7 +25,21 @@ const SplitIndexItem = ({ split, expenses, currentUser, currentUsername }) => {
           </div>
       </div>
       )
-    else if (splitAmount && split.oweAmount <= 0) return(
+    else if (split.oweAmount < 0) return(
+      <div className='split-show-details-you-owe'>
+        <div><img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638517195/Screen_Shot_2021-12-02_at_11.39.28_PM_rh8ezb.png" alt="" /></div>
+        <div>
+          <Link to="/all">
+            <div className='split-show-details-you-owe-user'>{`${currentUsername}`}</div>
+            <div className='split-show-details-you-owe-info'>
+              <span>you owe {`${split.username}`} </span>
+              {`$${(-split.oweAmount).toFixed(2)}`}
+            </div>
+          </Link>
+        </div>
+      </div>
+      )
+    else if (splitAmount && split.oweAmount === 0) return (
       <div className='split-show-details-you-owe'>
         <div><img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638517195/Screen_Shot_2021-12-02_at_11.39.28_PM_rh8ezb.png" alt="" /></div>
         <div>
@@ -38,7 +52,7 @@ const SplitIndexItem = ({ split, expenses, currentUser, currentUsername }) => {
           </Link>
         </div>
       </div>
-      )
+    )
     else return "" ;  
 }
 
