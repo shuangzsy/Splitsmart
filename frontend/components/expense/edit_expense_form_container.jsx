@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updateExpense, requestExpense } from '../../actions/expense_action';
+import { updateExpense, requestExpense, removeExpenseErrors } from '../../actions/expense_action';
 import { withRouter } from 'react-router-dom';
 import React from 'react';
 import EditExpenseForm from './edit_expense_form';
@@ -26,12 +26,14 @@ const mSTP = (state, ownProps) => {
     currentUser: state.session.currentUser,
     friends: Object.values(state.entities.friends),
     groups: Object.values(state.entities.groups),
+    expenseErrors: state.expenseErrors
 }}
 
 const mDTP = dispatch => ({
   requestExpense: (id) => dispatch(requestExpense(id)),
   submitExpense: (expense, splits) => dispatch(updateExpense(expense, splits)),
-  submitActivity: (activity) => dispatch(createActivity(activity))
+  submitActivity: (activity) => dispatch(createActivity(activity)),
+  removeExpenseErrors: () => dispatch(removeExpenseErrors())
 })
 
 export default withRouter(connect(mSTP, mDTP)(EditExpenseForm))

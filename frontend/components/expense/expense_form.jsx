@@ -11,6 +11,11 @@ class ExpenseForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateSplit = this.updateSplit.bind(this);
     this.isArrayInArray = this.isArrayInArray.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.removeExpenseErrors()
   }
 
   isArrayInArray(arr, item) {
@@ -37,6 +42,12 @@ class ExpenseForm extends React.Component {
     const splits = this.state.splits;
     splits[splits.length - 1][0] = e.target.value;
     this.setState({splits});
+  }
+
+  renderErrors() {
+    return (
+      <p className='expense-errors-show'>{this.props.expenseErrors}</p>
+    );
   }
 
   handleSubmit(e){
@@ -104,84 +115,87 @@ class ExpenseForm extends React.Component {
 
     return (
       <div className='modal-child' onClick={e => e.stopPropagation()}>
-        <form className = "expense_form" onSubmit = {this.handleSubmit}>
-          <div className="expense_form_header">
-            {this.props.formType}
-            <span onClick={this.props.closeModal} className="close-x">X</span>
-          </div>
-          
-          <div className="with_field">
-            <span> With <strong>you</strong> and: </span>
-            {/* <input type="text" value={this.state.splits[1][0]} onChange={this.updateSplit} /> */}
-            <select className='split-with-selector' value={this.state.splits[1][0]} onChange={this.updateSplit}>
-              <option>select a friend</option>
-              <option value="imthedemofriend@sz.com">imthedemofriend@sz.com</option>
-              {friendEmailList.map((email) => {
-                if (!uniqueFriendEmail.includes(email) && email !=="imthedemofriend@sz.com")
-                {
-                  uniqueFriendEmail.push(email)
-                  return(
-                    <option key={email} value={email}>{email}</option>)}
-                }
-              )}
-            </select>
-          </div>
-
-          <div className="input_field">
-            <div>
-              <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638316661/Screen_Shot_2021-11-30_at_3.55.55_PM_m92jda.png" alt="" />
+        <div>
+          <form className = "expense_form" onSubmit = {this.handleSubmit}>
+            <div className="expense_form_header">
+              {this.props.formType}
+              <span onClick={this.props.closeModal} className="close-x">X</span>
             </div>
-            <div>
-              <input className='enter-desciption' type="text" placeholder="Enter a description" value={this.state.expense.description} onChange={this.updateExpense('description')} />
+            
+            <div className="with_field">
+              <span> With <strong>you</strong> and: </span>
+              {/* <input type="text" value={this.state.splits[1][0]} onChange={this.updateSplit} /> */}
+              <select className='split-with-selector' value={this.state.splits[1][0]} onChange={this.updateSplit}>
+                <option>select a friend</option>
+                <option value="imthedemofriend@sz.com">imthedemofriend@sz.com</option>
+                {friendEmailList.map((email) => {
+                  if (!uniqueFriendEmail.includes(email) && email !=="imthedemofriend@sz.com")
+                  {
+                    uniqueFriendEmail.push(email)
+                    return(
+                      <option key={email} value={email}>{email}</option>)}
+                  }
+                )}
+              </select>
+            </div>
+
+            <div className="input_field">
               <div>
-                <span className="currency_code">$</span>
-                <input className="currency-code-item" type="text" placeholder="0.00" value={this.state.expense.total_amount} onChange={this.updateExpense('total_amount')} />
+                <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638316661/Screen_Shot_2021-11-30_at_3.55.55_PM_m92jda.png" alt="" />
+              </div>
+              <div>
+                <input className='enter-desciption' type="text" placeholder="Enter a description" value={this.state.expense.description} onChange={this.updateExpense('description')} />
+                <div>
+                  <span className="currency_code">$</span>
+                  <input className="currency-code-item" type="text" placeholder="0.00" value={this.state.expense.total_amount} onChange={this.updateExpense('total_amount')} />
+                </div>
               </div>
             </div>
-          </div>
-          
-          
-          <div className="human_summary">
-            Paid by 
-            {/* <input type="text" placeholder="you" value={this.state.expense.payer} onChange={this.updateExpense('payer')} />  */} 
-            <select className='split-people-selector' value={this.state.expense.payer} onChange={this.updateExpense('payer')}>
-              <option value="you">you</option>
-              <option value={this.state.splits[1][0]}>{this.state.splits[1][0]}</option>
-            </select>
-            and split 
-            <select className='split-method-selector' value={this.state.expense.split_method} onChange={this.updateExpense('split_method')}>
-              <option value="equally">equally</option>
-              {this.state.expense.payer === "you" ?
-              <option value="theyOweFull">They owe the full amount</option>:
-              <option value="youOweFull">You owe the full amount</option>
-            }
-            </select>
-            <div className="details">($0.00/person)</div>
-          </div>
-
-          {/* <label htmlFor="">Settled</label>
-          <input type="text" value={this.state.expense.settled} onChange={this.updateExpense('settled')} /> */}
-          {/* <label htmlFor="">Group</label> */}
-          {/* <input type="text" placeholder='Enter a group' value={this.state.expense.group_name} onChange={this.updateExpense('group_name')} /> */}
-          {/* <div>or</div> */}
-          <div className='group-selector-container'>
-            <select className='group-selector' value={this.state.expense.group_name} onChange={this.updateExpense('group_name')}>
-              <option value="Non-group">No group</option>
-              {uniqueGroup.map((group) => {
-                if (group !== ""){
-                  return(
-                    <option key={group} value={group}>{group}</option>
-                  )}
-                })
+            
+            
+            <div className="human_summary">
+              Paid by 
+              {/* <input type="text" placeholder="you" value={this.state.expense.payer} onChange={this.updateExpense('payer')} />  */} 
+              <select className='split-people-selector' value={this.state.expense.payer} onChange={this.updateExpense('payer')}>
+                <option value="you">you</option>
+                <option value={this.state.splits[1][0]}>{this.state.splits[1][0]}</option>
+              </select>
+              and split 
+              <select className='split-method-selector' value={this.state.expense.split_method} onChange={this.updateExpense('split_method')}>
+                <option value="equally">equally</option>
+                {this.state.expense.payer === "you" ?
+                <option value="theyOweFull">They owe the full amount</option>:
+                <option value="youOweFull">You owe the full amount</option>
               }
-            </select>
-          </div>
+              </select>
+              <div className="details">($0.00/person)</div>
+            </div>
 
-          <div className="expense-form-footer">
-            <button onClick={this.props.closeModal} className="cancel-create">Cancel</button>
-            <input className="submit-expense" type="submit" value="Save"/>
-          </div>
-        </form>
+            {/* <label htmlFor="">Settled</label>
+            <input type="text" value={this.state.expense.settled} onChange={this.updateExpense('settled')} /> */}
+            {/* <label htmlFor="">Group</label> */}
+            {/* <input type="text" placeholder='Enter a group' value={this.state.expense.group_name} onChange={this.updateExpense('group_name')} /> */}
+            {/* <div>or</div> */}
+            <div className='group-selector-container'>
+              <select className='group-selector' value={this.state.expense.group_name} onChange={this.updateExpense('group_name')}>
+                <option value="Non-group">No group</option>
+                {uniqueGroup.map((group) => {
+                  if (group !== ""){
+                    return(
+                      <option key={group} value={group}>{group}</option>
+                    )}
+                  })
+                }
+              </select>
+            </div>
+
+            <div className="expense-form-footer">
+              <button onClick={this.props.closeModal} className="cancel-create">Cancel</button>
+              <input className="submit-expense" type="submit" value="Save"/>
+            </div>
+          </form>
+        </div>
+        {this.renderErrors()}
       </div>
       
       )

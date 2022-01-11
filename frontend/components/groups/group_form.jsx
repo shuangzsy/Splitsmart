@@ -16,9 +16,7 @@ class GroupForm extends React.Component {
   }
 
   handleSubmit() {
-    debugger;
     this.props.submitGroup(this.state);
-    debugger;
     this.props.history.push('/dashboard');
   }
 
