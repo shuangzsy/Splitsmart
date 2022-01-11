@@ -22,7 +22,7 @@ class UserProfile extends React.Component {
           <div className='left_side_bar'><LeftNav expenses = {this.props.expenses} splits={this.props.splits} currentUser={this.props.currentUser}/></div>
           <div className='center_bar'><CenterNav AddExpense={this.props.AddExpense} splits={this.props.splits} currentUser={this.props.currentUser}/></div>
           <div className='right-bar'>
-            <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638552017/Screen_Shot_2021-12-03_at_9.19.58_AM_dleon5.png" alt="" />
+            <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1641862831/Screen_Shot_2022-01-10_at_2.10.29_PM_huvd5v.png" alt="" />
           </div>      
         </div>
       </div>
