@@ -6,7 +6,7 @@ const MainNav = () => {
     <div>
     <div className='header_main'>
       <div>
-        <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1637653233/IMG_5588_iksqs5.jpg" />
+          <Link to='/'><img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1637653233/IMG_5588_iksqs5.jpg" /></Link>
       </div>
 
       <ul>

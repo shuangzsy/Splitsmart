@@ -198,7 +198,7 @@ hr {
 
 .enter-desciption::-webkit-input-placeholder{
    font-size: 20px;
-   color: rgb(231, 230, 230);
+   color: rgb(204, 204, 204);
    text-align: center;
 }
 
@@ -246,4 +246,8 @@ select{
   margin-left: 5px;
   margin-right: 5px;
   color: #666;
+}
+
+.add-expense-button{
+  cursor: pointer;
 }

@@ -55,7 +55,7 @@ export default class SessionForm extends React.Component {
               <input id="email" type="text" onChange={this.update('email')} />
               <label htmlFor="password">And here’s my password:</label>
               <input id="password" type="password" onChange={this.update('password')} />
-              <button >Sign up!</button>
+              <button className='sign-up-button'>Sign up!</button>
             </form>
             {this.renderErrors()}
           </div>
@@ -72,7 +72,7 @@ export default class SessionForm extends React.Component {
               <input id="email" type="text" onChange={this.update('email')} />
               <label htmlFor="password">Password</label>
               <input id="password" type="password" onChange={this.update('password')} />
-              <button style={{ backgroundColor: "#1CC29F", color: 'white' }} >Log in</button>
+              <button className="login-button" style={{ backgroundColor: "#1CC29F", color: 'white' }} >Log in</button>
             </form>
             <button className="demo-button" style={{ backgroundColor: "#1CC29F", color: 'white' }} onClick={() => this.props.submitForm(this.props.demoUser)}>Demo</button>
             {this.renderErrors()}

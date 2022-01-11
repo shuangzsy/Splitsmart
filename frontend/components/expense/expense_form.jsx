@@ -119,7 +119,7 @@ class ExpenseForm extends React.Component {
           <form className = "expense_form" onSubmit = {this.handleSubmit}>
             <div className="expense_form_header">
               {this.props.formType}
-              <span onClick={this.props.closeModal} className="close-x">X</span>
+              {/* <span onClick={this.props.closeModal} className="close-x">X</span> */}
             </div>
             
             <div className="with_field">
