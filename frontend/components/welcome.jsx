@@ -12,10 +12,10 @@ const WelcomePage = () => {
         </Link>
         <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638492474/Screen_Shot_2021-12-02_at_4.11.34_PM_ntncoq.png" alt="" />
         <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638492502/Screen_Shot_2021-12-02_at_4.11.45_PM_b6lpxp.png" alt="" />
-        <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638492529/Screen_Shot_2021-12-02_at_4.11.54_PM_w2sicb.png" alt="" />
         <Link to='/signup'>
-          <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638492589/Screen_Shot_2021-12-02_at_4.12.13_PM_aehart.png" alt="" />
+          <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638492529/Screen_Shot_2021-12-02_at_4.11.54_PM_w2sicb.png" alt="" />
         </Link>
+        <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638492589/Screen_Shot_2021-12-02_at_4.12.13_PM_aehart.png" alt="" />
       </div>
     </div>
 
