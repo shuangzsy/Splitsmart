@@ -1,6 +1,6 @@
 .left-side-bar-list-container{
   display: flex;
-  width: 400px;
+  width: 100%;
   height: 512px;
   justify-content: flex-end;
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
@@ -21,6 +21,7 @@
 }
 
 .left_side_bar{
+  width: 40%;
   text-align: left;
   height: 512px;
   margin-left: 2px;
