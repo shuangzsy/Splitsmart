@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import CurrencyInput from 'react-currency-input-field';
 
 class ExpenseForm extends React.Component {
   constructor(props){
@@ -12,11 +13,20 @@ class ExpenseForm extends React.Component {
     this.updateSplit = this.updateSplit.bind(this);
     this.isArrayInArray = this.isArrayInArray.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.handleOnValueChange = this.handleOnValueChange.bind(this);
   }
 
   componentDidMount() {
     this.props.removeExpenseErrors()
   }
+
+  handleOnValueChange = (newValue) => {
+    if (newValue === undefined) {
+      this.state.expense.total_amount = 0;
+    } else {
+      this.state.expense.total_amount = newValue;
+    }
+  };
 
   isArrayInArray(arr, item) {
     let item_as_string = JSON.stringify(item);
@@ -27,7 +37,7 @@ class ExpenseForm extends React.Component {
   }
   
   updateExpense(field) {
-    // debugger;
+    
     return e => {
       const expense = this.state.expense;
       expense[field] = e.target.value;
@@ -144,10 +154,20 @@ class ExpenseForm extends React.Component {
                 <img src="https://res.cloudinary.com/dnmk6viwx/image/upload/v1638316661/Screen_Shot_2021-11-30_at_3.55.55_PM_m92jda.png" alt="" />
               </div>
               <div>
-                <input className='enter-desciption' type="text" placeholder="Enter a description" value={this.state.expense.description} onChange={this.updateExpense('description')} />
+                <input className='enter-desciption' 
+                  type="text" 
+                  placeholder="Enter a description" 
+                  value={this.state.expense.description} 
+                  onChange={this.updateExpense('description')} />
                 <div>
                   <span className="currency_code">$</span>
-                  <input className="currency-code-item" type="text" placeholder="0.00" value={this.state.expense.total_amount} onChange={this.updateExpense('total_amount')} />
+                  <input className="currency-code-item" 
+                    type="number"
+                    placeholder="0.00" 
+                    pattern="[0-9]+([\.,][0-9]+)?"
+                    step="0.01"
+                    value={this.state.expense.total_amount} 
+                    onChange={this.updateExpense('total_amount')} />
                 </div>
               </div>
             </div>
