@@ -34,9 +34,9 @@ class LeftNav extends React.Component {
           <li className="activity">
             <Link className="activity-list" to="/activity">🏳️ Recent activity</Link>
           </li>
-          {/* <li className="filter">
+          <li className="filter">
             <input type="text" placeholder="filter by name"/>
-          </li> */}
+          </li>
           <li className="all">
             <Link className='all-expense-list' to="/all"> 🗒 All expenses</Link>
           </li>
