@@ -3,22 +3,9 @@
 A Splitwise clone for friends to split costs between friends and family members.
 
 # Development
-# 1. Expenses
-Users can record a expense split between themselves and another user, choosing who made the initial payment. The expense is recorded for both users, and a running balance is calculated and displayed. A user can view expenses and splits between another user, as well as between all their expenses and friends. Expenses can also be deleted and can only be viewed by those involved.
+# 1. Overview
+Users can record a expense split between themselves and another user, choosing who make the initial payment. The expense is recorded for both users, and a running balance is calculated and displayed. A user can view expenses and splits between another user, as well as between all their expenses and friends. Expenses can also be deleted and can only be viewed by those involved.
 
-```
-json.user do
-    json.extract! user, :id, :email, :username
-end
-
-json.expenses do
-    @user.expenses.each do |expense|
-        json.set! expense.id do
-            json.extract! expense, :id, :description, :total_amount, :creator_id, :settled, :created_at, :group_name
-        end
-    end
-end
-```
 
 # Schema
 Schema is created in a very flexible way, which enable the uers to split with mutiple users and using defferent splits way.
@@ -57,11 +44,12 @@ These are all expenses under current user. User can clict all expense link from 
 ## Current features
 * User auth
 * Demo user
-* Add expenses and split evenly
-* All expenses
+* Add expenses and split evenly or paied all by one party
+* All expenses details show page
+* User activities
+
 
 ## Future features
 * add mutiple user in a expense
-* have mutiple split options
-* have activity page for the user activites
+* have mutiple split options (customized the split percentage)
 
